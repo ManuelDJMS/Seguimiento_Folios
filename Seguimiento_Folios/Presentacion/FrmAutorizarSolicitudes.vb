@@ -190,4 +190,12 @@ Public Class FrmAutorizarSolicitudes
     Private Sub TxtFolio_TextChanged(sender As Object, e As EventArgs) Handles txtFolio.TextChanged
         busquedas(DGRes, txtFolio, txtNombreE, txtNumCot)
     End Sub
+
+    Private Sub TxtNombreE_TextChanged(sender As Object, e As EventArgs) Handles txtNombreE.TextChanged
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot)
+    End Sub
+
+    Private Sub TxtNumCot_TextChanged(sender As Object, e As EventArgs) Handles txtNumCot.TextChanged
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot)
+    End Sub
 End Class

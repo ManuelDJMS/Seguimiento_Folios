@@ -22,9 +22,9 @@ Partial Class FrmAutorizarSolicitudes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAutorizarSolicitudes))
         Me.TabConsulta = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -74,6 +74,8 @@ Partial Class FrmAutorizarSolicitudes
         Me.btSinCot = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TabConsulta.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DGRes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,30 +118,30 @@ Partial Class FrmAutorizarSolicitudes
         Me.DGRes.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DGRes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGRes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(170, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(170, Byte), Integer))
+        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
         Me.DGRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGRes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18, Me.Column19, Me.Column20, Me.Column21, Me.Column22, Me.Column23, Me.Column24, Me.Column25, Me.Column26, Me.Column27})
         Me.DGRes.EnableHeadersVisualStyles = False
         Me.DGRes.Location = New System.Drawing.Point(14, 120)
         Me.DGRes.Name = "DGRes"
         Me.DGRes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
+        Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle21
         Me.DGRes.Size = New System.Drawing.Size(1109, 463)
         Me.DGRes.TabIndex = 261
         '
@@ -285,7 +287,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.GroupBox2.Controls.Add(Me.RbTodos)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.GroupBox2.Location = New System.Drawing.Point(525, 45)
+        Me.GroupBox2.Location = New System.Drawing.Point(725, 45)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(398, 69)
         Me.GroupBox2.TabIndex = 260
@@ -329,6 +331,8 @@ Partial Class FrmAutorizarSolicitudes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txtFolio)
         Me.GroupBox1.Controls.Add(Me.Label25)
@@ -339,7 +343,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Highlight
         Me.GroupBox1.Location = New System.Drawing.Point(14, 45)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(494, 69)
+        Me.GroupBox1.Size = New System.Drawing.Size(687, 69)
         Me.GroupBox1.TabIndex = 259
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Por"
@@ -368,7 +372,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Label25.Location = New System.Drawing.Point(346, 32)
+        Me.Label25.Location = New System.Drawing.Point(339, 32)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(72, 17)
         Me.Label25.TabIndex = 204
@@ -379,7 +383,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.LabelNombre.AutoSize = True
         Me.LabelNombre.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelNombre.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.LabelNombre.Location = New System.Drawing.Point(131, 32)
+        Me.LabelNombre.Location = New System.Drawing.Point(127, 32)
         Me.LabelNombre.Name = "LabelNombre"
         Me.LabelNombre.Size = New System.Drawing.Size(67, 17)
         Me.LabelNombre.TabIndex = 203
@@ -388,7 +392,7 @@ Partial Class FrmAutorizarSolicitudes
         'txtNumCot
         '
         Me.txtNumCot.Font = New System.Drawing.Font("Calibri Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumCot.Location = New System.Drawing.Point(424, 29)
+        Me.txtNumCot.Location = New System.Drawing.Point(417, 29)
         Me.txtNumCot.Name = "txtNumCot"
         Me.txtNumCot.Size = New System.Drawing.Size(59, 21)
         Me.txtNumCot.TabIndex = 206
@@ -396,7 +400,7 @@ Partial Class FrmAutorizarSolicitudes
         'txtNombreE
         '
         Me.txtNombreE.Font = New System.Drawing.Font("Calibri Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreE.Location = New System.Drawing.Point(202, 31)
+        Me.txtNombreE.Location = New System.Drawing.Point(198, 31)
         Me.txtNombreE.Name = "txtNombreE"
         Me.txtNombreE.Size = New System.Drawing.Size(138, 21)
         Me.txtNombreE.TabIndex = 205
@@ -485,6 +489,27 @@ Partial Class FrmAutorizarSolicitudes
         Me.PictureBox5.TabIndex = 43
         Me.PictureBox5.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Label1.Location = New System.Drawing.Point(478, 31)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(82, 17)
+        Me.Label1.TabIndex = 207
+        Me.Label1.Text = "Pendientes:"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"COMPLETO", "Orden de O.C. Y Mensajería", "Orden de compra", "Solo mensajería"})
+        Me.ComboBox1.Location = New System.Drawing.Point(560, 27)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 25)
+        Me.ComboBox1.TabIndex = 208
+        '
         'FrmAutorizarSolicitudes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -561,4 +586,6 @@ Partial Class FrmAutorizarSolicitudes
     Friend WithEvents Column25 As DataGridViewTextBoxColumn
     Friend WithEvents Column26 As DataGridViewTextBoxColumn
     Friend WithEvents Column27 As DataGridViewTextBoxColumn
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Label1 As Label
 End Class
