@@ -1,9 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmSeguimieto
-    Dim equipo, CA, facAd, CONC, UOC, OCN, FACOC As String
+    Dim equipo, CA, facAd, CONC, UOC, OCN, FACOC, pendientes As String
     Dim numCot As Integer
 
-    Dim dias, cveoperador, pendientes, OC As Integer
+    Dim dias, cveoperador, OC As Integer
     Dim lector As SqlDataReader
     Private Sub FrmSeguimieto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -75,13 +75,13 @@ Public Class FrmSeguimieto
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
 
         If rbCompleto.Checked = True Then
-            pendientes = 0
+            pendientes = "COMPLETO"
         ElseIf rbOc.Checked = True Then
-            pendientes = 1
+            pendientes = "Orden de compra"
         ElseIf rbOcyMensajeria.Checked = True Then
-            pendientes = 2
+            pendientes = "Orden de O.C. Y Mensajeria"
         ElseIf rbMensajeria.Checked = True Then
-            pendientes = 3
+            pendientes = "Solo mensajeria"
         End If
         If RbSi.Checked = True Then
             facAd = "SI"
@@ -143,7 +143,7 @@ Public Class FrmSeguimieto
             FEC = Convert.ToDateTime(dtpfechaCertificado.Text).ToShortDateString
             FEF = Convert.ToDateTime(dtpfechaCertificado.Text).ToShortDateString
             R = "insert into [MetasCotizador].[dbo].[Segumiento_folios] ([Folio],[Cve_operador],[Pendientes],[Fac_Adelantado],[CA],[Combinado_con],[Operador_ext],[Cierre_folio],[Credito],[Observaciones],[Equipo],[Dias],[FechaVenc],[Con_cot],[Num_cot],[Mensajeria_recep],[Obser_retencion],[FMC],[FEF],[datos_informes],[OC],[OC_necesaria],[fac_oc],[Num_orde_de_compra],[Status_folio],[Domicilio_entrega],[Mensajeria_retorno])
-        values(" & Val(lblNumFolio.Text) & "," & Val(cveoperador) & "," & Val(pendientes) & ", '" & facAd & "','" & CA & "','" & txtCombinadoCon.Text & "', '" & cboOperadores.Text & "','" & cboCierra.Text & "', '" & txtCredito.Text & "', '" & txtObserPendientes.Text & "','" & txtEquipo.Text & "'," & Val(txtDias.Text) & ", '" & fechaVen & "', '" & CONC & "',  " & Val(txtNumCot.Text) & ", '" & txtMenRecep.Text & "','" & txtObserRetencion.Text & "','" & FEC & "','" & FEF & "', '" & txtDatosInforme.Text & "','" & UOC & "','" & OCN & "','" & FACOC & "','" & txtNumComp.Text & "', '" & cboStatus.Text & "', '" & txtDomEntrega.Text & "','" & txtMenEnv.Text & "')"
+        values(" & Val(lblNumFolio.Text) & "," & Val(cveoperador) & ",'" & (pendientes) & "', '" & facAd & "','" & CA & "','" & txtCombinadoCon.Text & "', '" & cboOperadores.Text & "','" & cboCierra.Text & "', '" & txtCredito.Text & "', '" & txtObserPendientes.Text & "','" & txtEquipo.Text & "'," & Val(txtDias.Text) & ", '" & fechaVen & "', '" & CONC & "',  " & Val(txtNumCot.Text) & ", '" & txtMenRecep.Text & "','" & txtObserRetencion.Text & "','" & FEC & "','" & FEF & "', '" & txtDatosInforme.Text & "','" & UOC & "','" & OCN & "','" & FACOC & "','" & txtNumComp.Text & "', '" & cboStatus.Text & "', '" & txtDomEntrega.Text & "','" & txtMenEnv.Text & "')"
             Dim comando2 As New SqlCommand(R, conexionMetasCotizador)
             comando2.CommandText = R
             MsgBox(R)
