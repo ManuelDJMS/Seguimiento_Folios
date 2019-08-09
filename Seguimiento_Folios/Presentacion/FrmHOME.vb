@@ -110,6 +110,11 @@ Public Class FrmHOME
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
+
+    Private Sub BtnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
+        colorearpanel(PanelMenu, PL_Cotizacion)
+        AbrirFormEnPanel(Of FrmAutorizarSolicitudes)()
+    End Sub
     'Private Sub BtnContactos_Click_1(sender As Object, e As EventArgs) Handles btnContactos.Click
     '    colorearpanel(PanelMenu, PL_Contactos)
     '    AbrirFormEnPanel(Of FrmContactos)()

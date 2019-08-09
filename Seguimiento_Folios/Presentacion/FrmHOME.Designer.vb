@@ -246,7 +246,7 @@ Partial Class FrmHOME
         Me.btnCotizacion.Name = "btnCotizacion"
         Me.btnCotizacion.Size = New System.Drawing.Size(193, 53)
         Me.btnCotizacion.TabIndex = 46
-        Me.btnCotizacion.Text = "Cotización"
+        Me.btnCotizacion.Text = "Editar Folios"
         Me.btnCotizacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCotizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCotizacion.UseVisualStyleBackColor = True
