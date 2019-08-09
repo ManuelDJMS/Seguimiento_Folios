@@ -21,10 +21,11 @@ Module Conexiones
     Public cnm As String = "Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019-3; User Id=sa; Password=Met99011578a;Integrated Security=False"
     Public usuario, nombreusuario As String
     '------------------------------------------------------------------------CONEXIONES A BASES DE DATOS-------------------------------------------------------------------------------------------
-    Sub MetodoLIMS()
+    Sub MetodoMetasInf()
         Try
-            conexionMetasCotizador = New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019-3; User Id=sa; Password=Met99011578a;Integrated Security=False")
-            conexionMetasCotizador.Open()
+            conexionMetasInf = New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019-3; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            'conexionMetasInf = New SqlConnection("Data Source=DATABASESERVER\COMPAC; Initial Catalog=MetAs_Live-pruebas; User Id=sa; Password=Contpaq1; Integrated Security=false")
+            conexionMetasInf.Open()
         Catch ex As Exception
             MsgBox("No se pudo conectar a la base de datos" + ex.ToString)
         End Try

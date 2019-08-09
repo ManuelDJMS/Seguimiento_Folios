@@ -4,6 +4,16 @@ Public Class FrmAutorizarSolicitudes
     Dim cotizacion As Integer
     Private Sub FrmAutorizarSolicitudes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'consultaGeneralDeCotizaciones(DGRes)
+        MetodoMetasInf()
+        comandoMetasInf = conexionMetasInf.CreateCommand
+        Dim r As String
+        r = "select x1.Folio,Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Empresa, Equipo, Dias, FechaRecep, FechaVenc, Con_cot, Mensajeria_recep, Obser_retencion,
+            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[INFORMES-SERVICIOS] x2 on x1.Folio=x2.Folio"
+        comandoMetasInf.CommandText = r
+        lectorMetasInf = comandoMetasInf.ExecuteReader
+        While lectorMetasInf.Read
+            DGRes.Rows.Add(lectorMetasInf(0), lectorMetasInf(1), lectorMetasInf(2), lectorMetasInf(3), lectorMetasInf(4), lectorMetasInf(5), lectorMetasInf(6), lectorMetasInf(7), lectorMetasInf(8), lectorMetasInf(9), lectorMetasInf(10), lectorMetasInf(11), lectorMetasInf(12), lectorMetasInf(13), lectorMetasInf(14), lectorMetasInf(15), lectorMetasInf(16), lectorMetasInf(17), lectorMetasInf(18), lectorMetasInf(19), lectorMetasInf(20), lectorMetasInf(21), lectorMetasInf(22), lectorMetasInf(23), lectorMetasInf(24), lectorMetasInf(25))
+        End While
         alternarColorColumnas(DGRes)
     End Sub
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
@@ -80,23 +90,23 @@ Public Class FrmAutorizarSolicitudes
 
     End Sub
 
-    Private Sub txtNumeroDeCuentaB_TextChanged(sender As Object, e As EventArgs) Handles txtNumeroDeCuentaB.TextChanged
-        Try
-            For Each row As DataGridViewRow In DGRes.Rows
-                row.Selected = False
-                If CStr(row.Cells(1).Value) = txtNumeroDeCuentaB.Text Then
-                    row.Selected = True
-                    Exit For
-                ElseIf CStr(row.Cells(0).Value).ToLower = Nothing Then
-                    row.Selected = False
-                Else
-                    row.Selected = False
-                End If
-            Next
-        Catch ex As Exception
-            MsgBox("No se encuentra dicho número de cotización.", MsgBoxStyle.Exclamation)
-        End Try
-    End Sub
+    'Private Sub txtNumeroDeCuentaB_TextChanged(sender As Object, e As EventArgs) Handles txtFolio.TextChanged
+    '    Try
+    '        For Each row As DataGridViewRow In DGRes.Rows
+    '            row.Selected = False
+    '            If CStr(row.Cells(1).Value) = txtFolio.Text Then
+    '                row.Selected = True
+    '                Exit For
+    '            ElseIf CStr(row.Cells(0).Value).ToLower = Nothing Then
+    '                row.Selected = False
+    '            Else
+    '                row.Selected = False
+    '            End If
+    '        Next
+    '    Catch ex As Exception
+    '        MsgBox("No se encuentra dicho número de cotización.", MsgBoxStyle.Exclamation)
+    '    End Try
+    'End Sub
 
     'Private Sub BtSinCot_Click(sender As Object, e As EventArgs) Handles btSinCot.Click
     '    FrmFiltrar.Show()
@@ -122,20 +132,58 @@ Public Class FrmAutorizarSolicitudes
     '    busquedas(DGRes, TextEmail, txtCP, txtNombreE, TextDom, TextTel)
     'End Sub
 
-    Private Sub DGRes_RowHeaderMouseClick_1(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGRes.RowHeaderMouseClick
-        Try
-            Dim numCot As String
-            numCot = DGRes.Rows(e.RowIndex).Cells(1).Value.ToString()
-            CustimerId = DGRes.Rows(e.RowIndex).Cells(12).Value.ToString()
-            txtClaveRecopilada.Text = numCot
-            consultaContactos(CustimerId)
-            consultaCot(numCot)
-            TabConsulta.SelectTab(1)
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-            cadena = Err.Description
-            cadena = cadena.Replace("'", "")
-            Bitacora("FrmAutorizarSolicitudes", "Error al seleccionar una cotización", Err.Number, cadena)
-        End Try
+    'Private Sub DGRes_RowHeaderMouseClick_1(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGRes.RowHeaderMouseClick
+    '    Try
+    '        Dim numCot As String
+    '        numCot = DGRes.Rows(e.RowIndex).Cells(1).Value.ToString()
+    '        CustimerId = DGRes.Rows(e.RowIndex).Cells(12).Value.ToString()
+    '        txtClaveRecopilada.Text = numCot
+    '        consultaContactos(CustimerId)
+    '        consultaCot(numCot)
+    '        TabConsulta.SelectTab(1)
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
+    '        cadena = Err.Description
+    '        cadena = cadena.Replace("'", "")
+    '        Bitacora("FrmAutorizarSolicitudes", "Error al seleccionar una cotización", Err.Number, cadena)
+    '    End Try
+    'End Sub
+
+    Private Sub RbTodos_CheckedChanged(sender As Object, e As EventArgs) Handles RbTodos.CheckedChanged
+        For i = 1 To DGRes.Columns.Count
+            DGRes.Columns("Column" & Convert.ToString(i)).Visible = True
+        Next
+    End Sub
+
+    Private Sub DgDatosG_CheckedChanged(sender As Object, e As EventArgs) Handles dgDatosG.CheckedChanged
+        Dim arreglo() = {1, 2, 4, 5, 9, 10, 11, 15, 16, 22, 24, 25, 26}
+        Dim l As Integer
+        l = Convert.ToInt32(UBound(arreglo))
+        For i = 1 To DGRes.Columns.Count
+            For j = 0 To l
+                If i = arreglo(j) Then
+                    DGRes.Columns("Column" & Convert.ToString(i)).Visible = True
+                    j = 14
+                Else
+                    DGRes.Columns("Column" & Convert.ToString(i)).Visible = False
+                End If
+            Next
+        Next
+    End Sub
+
+    Private Sub RbTecnicos_CheckedChanged(sender As Object, e As EventArgs) Handles RbTecnicos.CheckedChanged
+        Dim arreglo() = {1, 2, 10, 11, 12, 13, 14, 19, 20}
+        Dim l As Integer
+        l = Convert.ToInt32(UBound(arreglo))
+        For i = 1 To DGRes.Columns.Count
+            For j = 0 To l
+                If i = arreglo(j) Then
+                    DGRes.Columns("Column" & Convert.ToString(i)).Visible = True
+                    j = 10
+                Else
+                    DGRes.Columns("Column" & Convert.ToString(i)).Visible = False
+                End If
+            Next
+        Next
     End Sub
 End Class
