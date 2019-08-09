@@ -110,39 +110,39 @@ Public Class FrmHOME
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
     End Sub
-    Private Sub BtnContactos_Click_1(sender As Object, e As EventArgs) Handles btnContactos.Click
-        colorearpanel(PanelMenu, PL_Contactos)
-        AbrirFormEnPanel(Of FrmContactos)()
-    End Sub
+    'Private Sub BtnContactos_Click_1(sender As Object, e As EventArgs) Handles btnContactos.Click
+    '    colorearpanel(PanelMenu, PL_Contactos)
+    '    AbrirFormEnPanel(Of FrmContactos)()
+    'End Sub
 
-    Private Sub BtnCerrar_MouseHover(sender As Object, e As EventArgs) Handles btnCerrar.MouseHover
-        btnCerrar.Size = New Size(35, 35)
-    End Sub
+    'Private Sub BtnCerrar_MouseHover(sender As Object, e As EventArgs) Handles btnCerrar.MouseHover
+    '    btnCerrar.Size = New Size(35, 35)
+    'End Sub
 
-    Private Sub BtnOrdenVenta_Click(sender As Object, e As EventArgs) Handles btnOrdenVenta.Click
-        colorearpanel(PanelMenu, PL_OrdenVenta)
-        AbrirFormEnPanel(Of FrmAutorizarSolicitudes)()
-    End Sub
+    'Private Sub BtnOrdenVenta_Click(sender As Object, e As EventArgs) Handles btnOrdenVenta.Click
+    '    colorearpanel(PanelMenu, PL_OrdenVenta)
+    '    AbrirFormEnPanel(Of FrmAutorizarSolicitudes)()
+    'End Sub
 
-    Private Sub BtnRecordatorios_Click(sender As Object, e As EventArgs) Handles btnRecordatorios.Click
-        colorearpanel(PanelMenu, PL_Recordatorio)
-        AbrirFormEnPanel(Of FrmSeguimientoCot)()
-    End Sub
+    'Private Sub BtnRecordatorios_Click(sender As Object, e As EventArgs) Handles btnRecordatorios.Click
+    '    colorearpanel(PanelMenu, PL_Recordatorio)
+    '    AbrirFormEnPanel(Of FrmSeguimientoCot)()
+    'End Sub
 
-    Private Sub BtnConfirmacion_Click(sender As Object, e As EventArgs) Handles btnConfirmacion.Click
-        ConfirmacionDeDatos.Show()
-    End Sub
+    'Private Sub BtnConfirmacion_Click(sender As Object, e As EventArgs) Handles btnConfirmacion.Click
+    '    ConfirmacionDeDatos.Show()
+    'End Sub
 
-    Private Sub BtnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
-        colorearpanel(PanelMenu, PL_Cotizacion)
-        AbrirFormEnPanel(Of FrmCotizadorLIMS)()
-    End Sub
+    'Private Sub BtnCotizacion_Click(sender As Object, e As EventArgs) Handles btnCotizacion.Click
+    '    colorearpanel(PanelMenu, PL_Cotizacion)
+    '    AbrirFormEnPanel(Of FrmCotizadorLIMS)()
+    'End Sub
 
-    Private Sub BtnPreFact_Click(sender As Object, e As EventArgs) Handles btnPreFact.Click
+    'Private Sub BtnPreFact_Click(sender As Object, e As EventArgs) Handles btnPreFact.Click
 
-        colorearpanel(PanelMenu, PL_Cotizacion)
-        AbrirFormEnPanel(Of FrmCompletarOT)()
-    End Sub
+    '    colorearpanel(PanelMenu, PL_Cotizacion)
+    '    AbrirFormEnPanel(Of FrmCompletarOT)()
+    'End Sub
 #End Region
     'METODO DE ABRIR FORMULARIO
     Private Sub AbrirFormEnPanel(Of Miform As {Form, New})()
