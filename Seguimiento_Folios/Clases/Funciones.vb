@@ -2,7 +2,7 @@
 Module Funciones
     Public R As String 'Variable que almacena todos los scripts de base de datos
     Public cadena As String 'VARIABLE PARA ALMACENAR LA CADENA DEL ERROR DE LA BITACORA
-
+    Public bandera As Boolean
     Public folio As Integer
     Public Sub Bitacora(Formulario As String, Evento As String, error1 As String, Descripcion As String)
         Try
@@ -42,4 +42,16 @@ Module Funciones
             Bitacora("FrmAutorizarSolicitudes", "Error al buscar cot", Err.Number, cadena)
         End Try
     End Sub
+    Public Sub colorearpanel(ByVal formulario As Panel, ByVal panelwhite As Panel)
+        Dim Text As Object
+        For Each Text In formulario.Controls
+            If TypeOf Text Is Panel Then
+                Dim txtTemp As Panel = CType(Text, Panel)
+                txtTemp.BackColor = Color.White
+                panelwhite.BackColor = Color.MediumSeaGreen
+                'PanelSesion.BackColor = Color.FromArgb(42, 50, 80)
+            End If
+        Next
+    End Sub
+
 End Module
