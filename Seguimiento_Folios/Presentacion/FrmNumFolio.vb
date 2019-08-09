@@ -4,8 +4,8 @@
         'FrmSeguimieto.ShowDialog()
         'Me.Close()
         colorearpanel(FrmHOME.PanelMenu, FrmHOME.PL_Contactos)
-        AbrirFormEnPanel(Of FrmAutorizarSolicitudes)()
-
+        AbrirFormEnPanel(Of FrmSeguimieto)()
+        Me.Close()
     End Sub
     Private Sub AbrirFormEnPanel(Of Miform As {Form, New})()
         Dim Formulario As Form

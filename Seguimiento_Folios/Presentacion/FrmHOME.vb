@@ -115,6 +115,10 @@ Public Class FrmHOME
         colorearpanel(PanelMenu, PL_Cotizacion)
         AbrirFormEnPanel(Of FrmAutorizarSolicitudes)()
     End Sub
+
+    Private Sub BtnContactos_Click(sender As Object, e As EventArgs) Handles btnContactos.Click
+        FrmNumFolio.Show()
+    End Sub
     'Private Sub BtnContactos_Click_1(sender As Object, e As EventArgs) Handles btnContactos.Click
     '    colorearpanel(PanelMenu, PL_Contactos)
     '    AbrirFormEnPanel(Of FrmContactos)()
