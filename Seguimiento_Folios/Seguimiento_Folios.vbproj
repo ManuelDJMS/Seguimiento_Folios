@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{78E46040-E9AD-4200-B649-F7C0638DEBC6}</ProjectGuid>
+    <ProjectGuid>{F149DDF4-749B-4EB2-88F8-603B9F6AD2F6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Seguimiento_Folios.FrmInicio</StartupObject>
+    <StartupObject>Seguimiento_Folios.My.MyApplication</StartupObject>
     <RootNamespace>Seguimiento_Folios</RootNamespace>
     <AssemblyName>Seguimiento_Folios</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,19 +74,11 @@
   <ItemGroup>
     <Compile Include="Clases\Conexiones.vb" />
     <Compile Include="Clases\Funciones.vb" />
-    <Compile Include="Presentacion\FrmNumFolio.Designer.vb">
-      <DependentUpon>FrmNumFolio.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\FrmNumFolio.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\FrmSesion.Designer.vb">
-      <DependentUpon>FrmSesion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\FrmSesion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,20 +107,26 @@
     <Compile Include="Presentacion\FrmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\FrmNumFolio.Designer.vb">
+      <DependentUpon>FrmNumFolio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmNumFolio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\FrmSeguimieto.Designer.vb">
       <DependentUpon>FrmSeguimieto.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmSeguimieto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\FrmSesion.Designer.vb">
+      <DependentUpon>FrmSesion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmSesion.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Presentacion\FrmNumFolio.resx">
-      <DependentUpon>FrmNumFolio.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FrmSesion.resx">
-      <DependentUpon>FrmSesion.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -145,13 +142,20 @@
     <EmbeddedResource Include="Presentacion\FrmInicio.resx">
       <DependentUpon>FrmInicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmNumFolio.resx">
+      <DependentUpon>FrmNumFolio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmSeguimieto.resx">
       <DependentUpon>FrmSeguimieto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmSesion.resx">
+      <DependentUpon>FrmSesion.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,6 +163,18 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_ingresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondos-de-pantalla-blancos.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-close-window-50.png" />
@@ -173,22 +189,10 @@
     <None Include="Resources\icons8-restore-window-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\metas_esta.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\login2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Fondos-de-pantalla-blancos.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btn_ingresar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btn_min.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\btn_cerrar.png" />
+    <None Include="Resources\metas_esta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
