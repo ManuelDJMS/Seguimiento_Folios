@@ -52,7 +52,7 @@ Partial Class FrmNumFolio
         Me.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btBuscar.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btBuscar.ForeColor = System.Drawing.Color.White
-        Me.btBuscar.Location = New System.Drawing.Point(46, 77)
+        Me.btBuscar.Location = New System.Drawing.Point(47, 77)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(127, 33)
         Me.btBuscar.TabIndex = 277
