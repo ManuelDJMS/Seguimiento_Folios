@@ -74,6 +74,12 @@
   <ItemGroup>
     <Compile Include="Clases\Conexiones.vb" />
     <Compile Include="Clases\Funciones.vb" />
+    <Compile Include="Presentacion\FrmNumFolio.Designer.vb">
+      <DependentUpon>FrmNumFolio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmNumFolio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\FrmSesion.Designer.vb">
       <DependentUpon>FrmSesion.vb</DependentUpon>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\FrmNumFolio.resx">
+      <DependentUpon>FrmNumFolio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmSesion.resx">
       <DependentUpon>FrmSesion.vb</DependentUpon>
     </EmbeddedResource>

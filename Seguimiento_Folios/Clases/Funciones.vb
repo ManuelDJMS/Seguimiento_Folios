@@ -2,6 +2,8 @@
 Module Funciones
     Public R As String 'Variable que almacena todos los scripts de base de datos
     Public cadena As String 'VARIABLE PARA ALMACENAR LA CADENA DEL ERROR DE LA BITACORA
+
+    Public folio As Integer
     Public Sub Bitacora(Formulario As String, Evento As String, error1 As String, Descripcion As String)
         Try
             Dim conexionbit As New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=Bitacora; User Id=sa; Password=Met99011578a;Integrated Security=False")
