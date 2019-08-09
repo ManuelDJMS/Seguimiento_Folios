@@ -23,13 +23,12 @@ Partial Class FrmAutorizarSolicitudes
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAutorizarSolicitudes))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabConsulta = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.DGRes = New System.Windows.Forms.DataGridView()
@@ -40,7 +39,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.TextDom = New System.Windows.Forms.TextBox()
         Me.TextEmail = New System.Windows.Forms.TextBox()
         Me.txtNombreE = New System.Windows.Forms.TextBox()
-        Me.dtp = New System.Windows.Forms.DateTimePicker()
         Me.txtCP = New System.Windows.Forms.TextBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -51,9 +49,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btSinCot = New System.Windows.Forms.Button()
-        Me.OV = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.cusAcount = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgCot = New System.Windows.Forms.DataGridView()
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -105,26 +101,31 @@ Partial Class FrmAutorizarSolicitudes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label59 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Column1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column31 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column32 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column33 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column40 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabConsulta.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DGRes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,7 +157,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.TabPage2.Controls.Add(Me.TextDom)
         Me.TabPage2.Controls.Add(Me.TextEmail)
         Me.TabPage2.Controls.Add(Me.txtNombreE)
-        Me.TabPage2.Controls.Add(Me.dtp)
         Me.TabPage2.Controls.Add(Me.txtCP)
         Me.TabPage2.Controls.Add(Me.Label27)
         Me.TabPage2.Controls.Add(Me.Label19)
@@ -167,9 +167,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.TabPage2.Controls.Add(Me.Label28)
         Me.TabPage2.Controls.Add(Me.Label3)
         Me.TabPage2.Controls.Add(Me.btSinCot)
-        Me.TabPage2.Controls.Add(Me.OV)
         Me.TabPage2.Controls.Add(Me.Button1)
-        Me.TabPage2.Controls.Add(Me.cusAcount)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -192,21 +190,21 @@ Partial Class FrmAutorizarSolicitudes
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGRes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGRes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column15, Me.Column19, Me.Column30, Me.Column31, Me.Column32, Me.Column33, Me.Column34, Me.Column35, Me.Column36, Me.Column37, Me.Column38, Me.Column39, Me.Column40})
+        Me.DGRes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18, Me.Column19, Me.Column28, Me.Column29, Me.Column30, Me.Column31, Me.Column32, Me.Column33, Me.Column34})
         Me.DGRes.EnableHeadersVisualStyles = False
         Me.DGRes.Location = New System.Drawing.Point(14, 124)
         Me.DGRes.Name = "DGRes"
         Me.DGRes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGRes.Size = New System.Drawing.Size(1109, 443)
         Me.DGRes.TabIndex = 258
         '
@@ -272,14 +270,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.txtNombreE.Size = New System.Drawing.Size(138, 21)
         Me.txtNombreE.TabIndex = 205
         '
-        'dtp
-        '
-        Me.dtp.Location = New System.Drawing.Point(287, 13)
-        Me.dtp.Name = "dtp"
-        Me.dtp.Size = New System.Drawing.Size(230, 20)
-        Me.dtp.TabIndex = 167
-        Me.dtp.Visible = False
-        '
         'txtCP
         '
         Me.txtCP.Font = New System.Drawing.Font("Calibri Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -295,9 +285,9 @@ Partial Class FrmAutorizarSolicitudes
         Me.Label27.ForeColor = System.Drawing.Color.ForestGreen
         Me.Label27.Location = New System.Drawing.Point(11, 17)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(91, 16)
+        Me.Label27.Size = New System.Drawing.Size(149, 16)
         Me.Label27.TabIndex = 152
-        Me.Label27.Text = "Cotizaciones"
+        Me.Label27.Text = "Seguimiento de Folios"
         '
         'Label19
         '
@@ -327,9 +317,9 @@ Partial Class FrmAutorizarSolicitudes
         Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.Label26.Location = New System.Drawing.Point(10, 40)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(233, 19)
+        Me.Label26.Size = New System.Drawing.Size(137, 19)
         Me.Label26.TabIndex = 165
-        Me.Label26.Text = "Cotizaciones generadas LIMS"
+        Me.Label26.Text = "Edicion de Folios"
         '
         'Label25
         '
@@ -384,16 +374,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.btSinCot.Text = "Sin Cot"
         Me.btSinCot.UseVisualStyleBackColor = False
         '
-        'OV
-        '
-        Me.OV.AutoSize = True
-        Me.OV.Location = New System.Drawing.Point(654, 19)
-        Me.OV.Name = "OV"
-        Me.OV.Size = New System.Drawing.Size(45, 13)
-        Me.OV.TabIndex = 169
-        Me.OV.Text = "Label10"
-        Me.OV.Visible = False
-        '
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
@@ -407,16 +387,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.Button1.TabIndex = 166
         Me.Button1.Text = "Generar OV"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'cusAcount
-        '
-        Me.cusAcount.AutoSize = True
-        Me.cusAcount.Location = New System.Drawing.Point(654, 45)
-        Me.cusAcount.Name = "cusAcount"
-        Me.cusAcount.Size = New System.Drawing.Size(45, 13)
-        Me.cusAcount.TabIndex = 168
-        Me.cusAcount.Text = "Label10"
-        Me.cusAcount.Visible = False
         '
         'TabPage1
         '
@@ -455,14 +425,14 @@ Partial Class FrmAutorizarSolicitudes
         Me.dgCot.BackgroundColor = System.Drawing.SystemColors.Window
         Me.dgCot.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgCot.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(170, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgCot.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(170, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCot.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgCot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgCot.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column8, Me.Column20, Me.Column21, Me.Column22, Me.Column23, Me.Column24, Me.Column25, Me.Column26, Me.Column27})
         Me.dgCot.EnableHeadersVisualStyles = False
@@ -470,16 +440,16 @@ Partial Class FrmAutorizarSolicitudes
         Me.dgCot.Name = "dgCot"
         Me.dgCot.ReadOnly = True
         Me.dgCot.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCot.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgCot.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.dgCot.RowsDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgCot.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgCot.Size = New System.Drawing.Size(1035, 281)
         Me.dgCot.TabIndex = 283
         '
@@ -995,126 +965,143 @@ Partial Class FrmAutorizarSolicitudes
         '
         'Column1
         '
-        Me.Column1.HeaderText = "Generar"
+        Me.Column1.Frozen = True
+        Me.Column1.HeaderText = "Folio"
         Me.Column1.Name = "Column1"
-        Me.Column1.Width = 50
         '
         'Column2
         '
-        Me.Column2.HeaderText = "NumCot"
+        Me.Column2.Frozen = True
+        Me.Column2.HeaderText = "Pendientes"
         Me.Column2.Name = "Column2"
-        Me.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Column2.Width = 50
         '
         'Column3
         '
-        Me.Column3.HeaderText = "Contacto"
+        Me.Column3.Frozen = True
+        Me.Column3.HeaderText = "Factura por Adelantado"
         Me.Column3.Name = "Column3"
-        Me.Column3.Width = 150
         '
         'Column4
         '
-        Me.Column4.HeaderText = "Empresa"
+        Me.Column4.Frozen = True
+        Me.Column4.HeaderText = "Carta de Autorización"
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 180
         '
         'Column5
         '
-        Me.Column5.HeaderText = "Correo"
+        Me.Column5.Frozen = True
+        Me.Column5.HeaderText = "Combinado con"
         Me.Column5.Name = "Column5"
         '
         'Column6
         '
-        Me.Column6.HeaderText = "Domicilio"
+        Me.Column6.Frozen = True
+        Me.Column6.HeaderText = "Operador Externo"
         Me.Column6.Name = "Column6"
-        Me.Column6.Width = 130
         '
         'Column7
         '
-        Me.Column7.HeaderText = "CP"
+        Me.Column7.Frozen = True
+        Me.Column7.HeaderText = "Cierra el Folio"
         Me.Column7.Name = "Column7"
-        Me.Column7.Width = 40
+        '
+        'Column9
+        '
+        Me.Column9.Frozen = True
+        Me.Column9.HeaderText = "Crédito"
+        Me.Column9.Name = "Column9"
+        '
+        'Column10
+        '
+        Me.Column10.Frozen = True
+        Me.Column10.HeaderText = "Observaciones"
+        Me.Column10.Name = "Column10"
+        '
+        'Column11
+        '
+        Me.Column11.Frozen = True
+        Me.Column11.HeaderText = "Equipo"
+        Me.Column11.Name = "Column11"
+        '
+        'Column12
+        '
+        Me.Column12.Frozen = True
+        Me.Column12.HeaderText = "Días"
+        Me.Column12.Name = "Column12"
+        '
+        'Column13
+        '
+        Me.Column13.Frozen = True
+        Me.Column13.HeaderText = "Fecha Recepción"
+        Me.Column13.Name = "Column13"
+        '
+        'Column14
+        '
+        Me.Column14.Frozen = True
+        Me.Column14.HeaderText = "Fecha Vencimiento"
+        Me.Column14.Name = "Column14"
         '
         'Column15
         '
-        Me.Column15.HeaderText = "Teléfono"
+        Me.Column15.Frozen = True
+        Me.Column15.HeaderText = "Con Cot"
         Me.Column15.Name = "Column15"
-        Me.Column15.Width = 80
+        '
+        'Column16
+        '
+        Me.Column16.Frozen = True
+        Me.Column16.HeaderText = "Num Cot"
+        Me.Column16.Name = "Column16"
+        '
+        'Column17
+        '
+        Me.Column17.HeaderText = "Mensajería Recepción"
+        Me.Column17.Name = "Column17"
+        '
+        'Column18
+        '
+        Me.Column18.HeaderText = "Observaciones de Retención"
+        Me.Column18.Name = "Column18"
         '
         'Column19
         '
-        Me.Column19.HeaderText = "Referencia"
+        Me.Column19.HeaderText = "Fecha de Entrega de Certificado"
         Me.Column19.Name = "Column19"
-        Me.Column19.Width = 80
+        '
+        'Column28
+        '
+        Me.Column28.HeaderText = "Fecha Entrega Facturación"
+        Me.Column28.Name = "Column28"
+        '
+        'Column29
+        '
+        Me.Column29.HeaderText = "Datos Informes"
+        Me.Column29.Name = "Column29"
         '
         'Column30
         '
-        Me.Column30.HeaderText = "Fecha Desde"
+        Me.Column30.HeaderText = "Orden de Compra"
         Me.Column30.Name = "Column30"
-        Me.Column30.Width = 70
         '
         'Column31
         '
-        Me.Column31.HeaderText = "Fecha Hasta"
+        Me.Column31.HeaderText = "Orden de Compra Necesaría"
         Me.Column31.Name = "Column31"
-        Me.Column31.Width = 70
         '
         'Column32
         '
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green
-        DataGridViewCellStyle2.Format = "0"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.Column32.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column32.HeaderText = "Total"
+        Me.Column32.HeaderText = "DEBE COINCIDIR FAC - OC"
         Me.Column32.Name = "Column32"
         '
         'Column33
         '
-        Me.Column33.HeaderText = "CustomerId"
+        Me.Column33.HeaderText = "Número de Orden de Compra"
         Me.Column33.Name = "Column33"
-        Me.Column33.Visible = False
         '
         'Column34
         '
-        Me.Column34.HeaderText = "Account"
+        Me.Column34.HeaderText = "Status Folio"
         Me.Column34.Name = "Column34"
-        '
-        'Column35
-        '
-        Me.Column35.HeaderText = "ShipCity"
-        Me.Column35.Name = "Column35"
-        Me.Column35.Visible = False
-        '
-        'Column36
-        '
-        Me.Column36.HeaderText = "ShipState"
-        Me.Column36.Name = "Column36"
-        Me.Column36.Visible = False
-        '
-        'Column37
-        '
-        Me.Column37.HeaderText = "ShipZip"
-        Me.Column37.Name = "Column37"
-        Me.Column37.Visible = False
-        '
-        'Column38
-        '
-        Me.Column38.HeaderText = "ShipTo"
-        Me.Column38.Name = "Column38"
-        Me.Column38.Visible = False
-        '
-        'Column39
-        '
-        Me.Column39.HeaderText = "CategoryCustomer"
-        Me.Column39.Name = "Column39"
-        Me.Column39.Visible = False
-        '
-        'Column40
-        '
-        Me.Column40.HeaderText = "ShipCounty"
-        Me.Column40.Name = "Column40"
-        Me.Column40.Visible = False
         '
         'FrmAutorizarSolicitudes
         '
@@ -1191,11 +1178,8 @@ Partial Class FrmAutorizarSolicitudes
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents dtp As DateTimePicker
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents cusAcount As Label
-    Friend WithEvents OV As Label
     Friend WithEvents btSinCot As Button
     Friend WithEvents TextTel As TextBox
     Friend WithEvents Label10 As Label
@@ -1222,24 +1206,29 @@ Partial Class FrmAutorizarSolicitudes
     Friend WithEvents Column25 As DataGridViewTextBoxColumn
     Friend WithEvents Column26 As DataGridViewTextBoxColumn
     Friend WithEvents Column27 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewCheckBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column10 As DataGridViewTextBoxColumn
+    Friend WithEvents Column11 As DataGridViewTextBoxColumn
+    Friend WithEvents Column12 As DataGridViewTextBoxColumn
+    Friend WithEvents Column13 As DataGridViewTextBoxColumn
+    Friend WithEvents Column14 As DataGridViewTextBoxColumn
     Friend WithEvents Column15 As DataGridViewTextBoxColumn
+    Friend WithEvents Column16 As DataGridViewTextBoxColumn
+    Friend WithEvents Column17 As DataGridViewTextBoxColumn
+    Friend WithEvents Column18 As DataGridViewTextBoxColumn
     Friend WithEvents Column19 As DataGridViewTextBoxColumn
+    Friend WithEvents Column28 As DataGridViewTextBoxColumn
+    Friend WithEvents Column29 As DataGridViewTextBoxColumn
     Friend WithEvents Column30 As DataGridViewTextBoxColumn
     Friend WithEvents Column31 As DataGridViewTextBoxColumn
     Friend WithEvents Column32 As DataGridViewTextBoxColumn
     Friend WithEvents Column33 As DataGridViewTextBoxColumn
     Friend WithEvents Column34 As DataGridViewTextBoxColumn
-    Friend WithEvents Column35 As DataGridViewTextBoxColumn
-    Friend WithEvents Column36 As DataGridViewTextBoxColumn
-    Friend WithEvents Column37 As DataGridViewTextBoxColumn
-    Friend WithEvents Column38 As DataGridViewTextBoxColumn
-    Friend WithEvents Column39 As DataGridViewTextBoxColumn
-    Friend WithEvents Column40 As DataGridViewTextBoxColumn
 End Class
