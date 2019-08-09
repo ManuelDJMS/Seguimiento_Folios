@@ -54,11 +54,11 @@ Partial Class FrmInicio
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label2.Location = New System.Drawing.Point(544, 340)
+        Me.Label2.Location = New System.Drawing.Point(494, 340)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(211, 21)
+        Me.Label2.Size = New System.Drawing.Size(261, 21)
         Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Cotizador LIMS Versión 2.0"
+        Me.Label2.Text = "Seguimiento de Folios Versión 1.0"
         '
         'Timer1
         '
@@ -81,7 +81,7 @@ Partial Class FrmInicio
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Autenticación de Usuarios"
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
     End Sub
 

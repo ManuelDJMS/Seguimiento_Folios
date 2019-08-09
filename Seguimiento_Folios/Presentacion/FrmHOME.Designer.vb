@@ -26,29 +26,29 @@ Partial Class FrmHOME
         Me.PanelContenedor = New System.Windows.Forms.Panel()
         Me.PanelFormularios = New System.Windows.Forms.Panel()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label23 = New System.Windows.Forms.Label()
+        Me.btnConfirmacion = New System.Windows.Forms.Button()
         Me.PL_Confirmacion = New System.Windows.Forms.Panel()
+        Me.btnRecordatorios = New System.Windows.Forms.Button()
         Me.PL_Recordatorio = New System.Windows.Forms.Panel()
+        Me.btnPreFact = New System.Windows.Forms.Button()
         Me.PL_PreFact = New System.Windows.Forms.Panel()
+        Me.btnOrdenVenta = New System.Windows.Forms.Button()
         Me.PL_OrdenVenta = New System.Windows.Forms.Panel()
+        Me.btnCotizacion = New System.Windows.Forms.Button()
         Me.PL_Cotizacion = New System.Windows.Forms.Panel()
+        Me.btnContactos = New System.Windows.Forms.Button()
         Me.PL_Contactos = New System.Windows.Forms.Panel()
         Me.PanelBarraTitulo = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnConfirmacion = New System.Windows.Forms.Button()
-        Me.btnRecordatorios = New System.Windows.Forms.Button()
-        Me.btnPreFact = New System.Windows.Forms.Button()
-        Me.btnOrdenVenta = New System.Windows.Forms.Button()
-        Me.btnCotizacion = New System.Windows.Forms.Button()
-        Me.btnContactos = New System.Windows.Forms.Button()
         Me.btnRestaurar = New System.Windows.Forms.PictureBox()
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnMaximizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.PanelContenedor.SuspendLayout()
         Me.PanelMenu.SuspendLayout()
-        Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.btnRestaurar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,6 +98,16 @@ Partial Class FrmHOME
         Me.PanelMenu.Size = New System.Drawing.Size(200, 689)
         Me.PanelMenu.TabIndex = 5
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Seguimiento_Folios.My.Resources.Resources.metas_esta
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(200, 95)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 42
+        Me.PictureBox1.TabStop = False
+        '
         'Label23
         '
         Me.Label23.AutoSize = True
@@ -109,6 +119,26 @@ Partial Class FrmHOME
         Me.Label23.TabIndex = 55
         Me.Label23.Text = "Metrólogos Asociados S.A. de C.V."
         '
+        'btnConfirmacion
+        '
+        Me.btnConfirmacion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConfirmacion.FlatAppearance.BorderSize = 0
+        Me.btnConfirmacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnConfirmacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnConfirmacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirmacion.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConfirmacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnConfirmacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnConfirmacion.Location = New System.Drawing.Point(0, 373)
+        Me.btnConfirmacion.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnConfirmacion.Name = "btnConfirmacion"
+        Me.btnConfirmacion.Size = New System.Drawing.Size(193, 53)
+        Me.btnConfirmacion.TabIndex = 54
+        Me.btnConfirmacion.Text = "Confirmación de Datos"
+        Me.btnConfirmacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnConfirmacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnConfirmacion.UseVisualStyleBackColor = True
+        '
         'PL_Confirmacion
         '
         Me.PL_Confirmacion.BackColor = System.Drawing.Color.White
@@ -116,6 +146,26 @@ Partial Class FrmHOME
         Me.PL_Confirmacion.Name = "PL_Confirmacion"
         Me.PL_Confirmacion.Size = New System.Drawing.Size(10, 53)
         Me.PL_Confirmacion.TabIndex = 53
+        '
+        'btnRecordatorios
+        '
+        Me.btnRecordatorios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRecordatorios.FlatAppearance.BorderSize = 0
+        Me.btnRecordatorios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnRecordatorios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnRecordatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecordatorios.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecordatorios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnRecordatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnRecordatorios.Location = New System.Drawing.Point(0, 319)
+        Me.btnRecordatorios.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnRecordatorios.Name = "btnRecordatorios"
+        Me.btnRecordatorios.Size = New System.Drawing.Size(193, 53)
+        Me.btnRecordatorios.TabIndex = 52
+        Me.btnRecordatorios.Text = "Recordatorio de Cotización"
+        Me.btnRecordatorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnRecordatorios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRecordatorios.UseVisualStyleBackColor = True
         '
         'PL_Recordatorio
         '
@@ -125,6 +175,26 @@ Partial Class FrmHOME
         Me.PL_Recordatorio.Size = New System.Drawing.Size(10, 53)
         Me.PL_Recordatorio.TabIndex = 51
         '
+        'btnPreFact
+        '
+        Me.btnPreFact.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnPreFact.FlatAppearance.BorderSize = 0
+        Me.btnPreFact.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnPreFact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnPreFact.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPreFact.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPreFact.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnPreFact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnPreFact.Location = New System.Drawing.Point(0, 265)
+        Me.btnPreFact.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPreFact.Name = "btnPreFact"
+        Me.btnPreFact.Size = New System.Drawing.Size(193, 53)
+        Me.btnPreFact.TabIndex = 50
+        Me.btnPreFact.Text = "Ordenes de Trabajo"
+        Me.btnPreFact.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnPreFact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPreFact.UseVisualStyleBackColor = True
+        '
         'PL_PreFact
         '
         Me.PL_PreFact.BackColor = System.Drawing.Color.White
@@ -132,6 +202,26 @@ Partial Class FrmHOME
         Me.PL_PreFact.Name = "PL_PreFact"
         Me.PL_PreFact.Size = New System.Drawing.Size(10, 53)
         Me.PL_PreFact.TabIndex = 49
+        '
+        'btnOrdenVenta
+        '
+        Me.btnOrdenVenta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnOrdenVenta.FlatAppearance.BorderSize = 0
+        Me.btnOrdenVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnOrdenVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnOrdenVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOrdenVenta.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOrdenVenta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnOrdenVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnOrdenVenta.Location = New System.Drawing.Point(0, 211)
+        Me.btnOrdenVenta.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnOrdenVenta.Name = "btnOrdenVenta"
+        Me.btnOrdenVenta.Size = New System.Drawing.Size(193, 53)
+        Me.btnOrdenVenta.TabIndex = 48
+        Me.btnOrdenVenta.Text = "Órdenes de Venta"
+        Me.btnOrdenVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnOrdenVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnOrdenVenta.UseVisualStyleBackColor = True
         '
         'PL_OrdenVenta
         '
@@ -141,6 +231,26 @@ Partial Class FrmHOME
         Me.PL_OrdenVenta.Size = New System.Drawing.Size(10, 53)
         Me.PL_OrdenVenta.TabIndex = 47
         '
+        'btnCotizacion
+        '
+        Me.btnCotizacion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCotizacion.FlatAppearance.BorderSize = 0
+        Me.btnCotizacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnCotizacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCotizacion.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCotizacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnCotizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCotizacion.Location = New System.Drawing.Point(0, 157)
+        Me.btnCotizacion.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCotizacion.Name = "btnCotizacion"
+        Me.btnCotizacion.Size = New System.Drawing.Size(193, 53)
+        Me.btnCotizacion.TabIndex = 46
+        Me.btnCotizacion.Text = "Cotización"
+        Me.btnCotizacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnCotizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCotizacion.UseVisualStyleBackColor = True
+        '
         'PL_Cotizacion
         '
         Me.PL_Cotizacion.BackColor = System.Drawing.Color.White
@@ -148,6 +258,26 @@ Partial Class FrmHOME
         Me.PL_Cotizacion.Name = "PL_Cotizacion"
         Me.PL_Cotizacion.Size = New System.Drawing.Size(10, 53)
         Me.PL_Cotizacion.TabIndex = 45
+        '
+        'btnContactos
+        '
+        Me.btnContactos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnContactos.FlatAppearance.BorderSize = 0
+        Me.btnContactos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnContactos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
+        Me.btnContactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnContactos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnContactos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
+        Me.btnContactos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnContactos.Location = New System.Drawing.Point(0, 103)
+        Me.btnContactos.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnContactos.Name = "btnContactos"
+        Me.btnContactos.Size = New System.Drawing.Size(193, 53)
+        Me.btnContactos.TabIndex = 44
+        Me.btnContactos.Text = "Clientes"
+        Me.btnContactos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnContactos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnContactos.UseVisualStyleBackColor = True
         '
         'PL_Contactos
         '
@@ -171,147 +301,11 @@ Partial Class FrmHOME
         Me.PanelBarraTitulo.Size = New System.Drawing.Size(1366, 41)
         Me.PanelBarraTitulo.TabIndex = 4
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Seguimiento_Folios.My.Resources.Resources.metas_esta
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(200, 95)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 42
-        Me.PictureBox1.TabStop = False
-        '
-        'btnConfirmacion
-        '
-        Me.btnConfirmacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConfirmacion.FlatAppearance.BorderSize = 0
-        Me.btnConfirmacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnConfirmacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnConfirmacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnConfirmacion.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfirmacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.btnConfirmacion.Image = Global.Seguimiento_Folios.My.Resources.Resources.icons8_new_post_48
-        Me.btnConfirmacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConfirmacion.Location = New System.Drawing.Point(0, 373)
-        Me.btnConfirmacion.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnConfirmacion.Name = "btnConfirmacion"
-        Me.btnConfirmacion.Size = New System.Drawing.Size(193, 53)
-        Me.btnConfirmacion.TabIndex = 54
-        Me.btnConfirmacion.Text = "Confirmación de Datos"
-        Me.btnConfirmacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnConfirmacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnConfirmacion.UseVisualStyleBackColor = True
-        '
-        'btnRecordatorios
-        '
-        Me.btnRecordatorios.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRecordatorios.FlatAppearance.BorderSize = 0
-        Me.btnRecordatorios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnRecordatorios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnRecordatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRecordatorios.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRecordatorios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.btnRecordatorios.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_notification_48__1_
-        Me.btnRecordatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnRecordatorios.Location = New System.Drawing.Point(0, 319)
-        Me.btnRecordatorios.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnRecordatorios.Name = "btnRecordatorios"
-        Me.btnRecordatorios.Size = New System.Drawing.Size(193, 53)
-        Me.btnRecordatorios.TabIndex = 52
-        Me.btnRecordatorios.Text = "Recordatorio de Cotización"
-        Me.btnRecordatorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnRecordatorios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnRecordatorios.UseVisualStyleBackColor = True
-        '
-        'btnPreFact
-        '
-        Me.btnPreFact.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPreFact.FlatAppearance.BorderSize = 0
-        Me.btnPreFact.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnPreFact.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnPreFact.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPreFact.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPreFact.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.btnPreFact.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_view_48
-        Me.btnPreFact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPreFact.Location = New System.Drawing.Point(0, 265)
-        Me.btnPreFact.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPreFact.Name = "btnPreFact"
-        Me.btnPreFact.Size = New System.Drawing.Size(193, 53)
-        Me.btnPreFact.TabIndex = 50
-        Me.btnPreFact.Text = "Ordenes de Trabajo"
-        Me.btnPreFact.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnPreFact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPreFact.UseVisualStyleBackColor = True
-        '
-        'btnOrdenVenta
-        '
-        Me.btnOrdenVenta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnOrdenVenta.FlatAppearance.BorderSize = 0
-        Me.btnOrdenVenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnOrdenVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnOrdenVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOrdenVenta.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOrdenVenta.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.btnOrdenVenta.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_numbered_list_48
-        Me.btnOrdenVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOrdenVenta.Location = New System.Drawing.Point(0, 211)
-        Me.btnOrdenVenta.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnOrdenVenta.Name = "btnOrdenVenta"
-        Me.btnOrdenVenta.Size = New System.Drawing.Size(193, 53)
-        Me.btnOrdenVenta.TabIndex = 48
-        Me.btnOrdenVenta.Text = "Órdenes de Venta"
-        Me.btnOrdenVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnOrdenVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnOrdenVenta.UseVisualStyleBackColor = True
-        '
-        'btnCotizacion
-        '
-        Me.btnCotizacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCotizacion.FlatAppearance.BorderSize = 0
-        Me.btnCotizacion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnCotizacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnCotizacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCotizacion.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCotizacion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.btnCotizacion.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_purchase_order_48
-        Me.btnCotizacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCotizacion.Location = New System.Drawing.Point(0, 157)
-        Me.btnCotizacion.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnCotizacion.Name = "btnCotizacion"
-        Me.btnCotizacion.Size = New System.Drawing.Size(193, 53)
-        Me.btnCotizacion.TabIndex = 46
-        Me.btnCotizacion.Text = "Cotización"
-        Me.btnCotizacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnCotizacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCotizacion.UseVisualStyleBackColor = True
-        '
-        'btnContactos
-        '
-        Me.btnContactos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnContactos.FlatAppearance.BorderSize = 0
-        Me.btnContactos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnContactos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen
-        Me.btnContactos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnContactos.Font = New System.Drawing.Font("Century Gothic", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnContactos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(72, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.btnContactos.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_contacts_48
-        Me.btnContactos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnContactos.Location = New System.Drawing.Point(0, 103)
-        Me.btnContactos.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnContactos.Name = "btnContactos"
-        Me.btnContactos.Size = New System.Drawing.Size(193, 53)
-        Me.btnContactos.TabIndex = 44
-        Me.btnContactos.Text = "Clientes"
-        Me.btnContactos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnContactos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnContactos.UseVisualStyleBackColor = True
-        '
         'btnRestaurar
         '
         Me.btnRestaurar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnRestaurar.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_restore_window_50
+        Me.btnRestaurar.Image = Global.Seguimiento_Folios.My.Resources.Resources.icons8_restore_window_50
         Me.btnRestaurar.Location = New System.Drawing.Point(1298, 5)
         Me.btnRestaurar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRestaurar.Name = "btnRestaurar"
@@ -325,7 +319,7 @@ Partial Class FrmHOME
         '
         Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnMinimizar.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_minimize_window_50
+        Me.btnMinimizar.Image = Global.Seguimiento_Folios.My.Resources.Resources.icons8_minimize_window_50
         Me.btnMinimizar.Location = New System.Drawing.Point(1264, 5)
         Me.btnMinimizar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMinimizar.Name = "btnMinimizar"
@@ -351,7 +345,7 @@ Partial Class FrmHOME
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCerrar.Image = Global.Metas_Cotizador.My.Resources.Resources.icons8_close_window_50
+        Me.btnCerrar.Image = Global.Seguimiento_Folios.My.Resources.Resources.icons8_close_window_50
         Me.btnCerrar.Location = New System.Drawing.Point(1332, 5)
         Me.btnCerrar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCerrar.Name = "btnCerrar"
@@ -375,8 +369,8 @@ Partial Class FrmHOME
         Me.PanelContenedor.ResumeLayout(False)
         Me.PanelMenu.ResumeLayout(False)
         Me.PanelMenu.PerformLayout()
-        Me.PanelBarraTitulo.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelBarraTitulo.ResumeLayout(False)
         CType(Me.btnRestaurar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnMaximizar, System.ComponentModel.ISupportInitialize).EndInit()
