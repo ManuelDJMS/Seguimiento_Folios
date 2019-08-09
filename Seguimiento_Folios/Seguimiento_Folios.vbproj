@@ -105,6 +105,12 @@
     <Compile Include="Presentacion\FrmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\FrmSeguimieto.Designer.vb">
+      <DependentUpon>FrmSeguimieto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmSeguimieto.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmInicio.resx">
       <DependentUpon>FrmInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmSeguimieto.resx">
+      <DependentUpon>FrmSeguimieto.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
