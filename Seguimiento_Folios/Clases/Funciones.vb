@@ -53,5 +53,26 @@ Module Funciones
             End If
         Next
     End Sub
-
+    Public Sub busquedas(ByVal dg As DataGridView, ByVal folio As TextBox, ByVal empresa As TextBox, ByVal cot As TextBox)
+        Try
+            dg.Rows.Clear()
+            MetodoMetasCotizador()
+            Dim R As String = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-entrega], FechaVenc, 
+            Con_cot, Num_cot, Mensajeria_recep, Obser_retencion, FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join 
+            [METASINF-2019-3].[dbo].[Entrega-Equipos-Logistica] x2 on x1.Folio=x2.Folio where x1.Folio like '" & folio.Text & "%' and Cliente like '" & empresa.Text & "%'
+            and Num_Cot like '" & cot.Text & "%'"
+            Dim comando As New SqlCommand(R, conexionMetasCotizador)
+            Dim lector As SqlDataReader
+            lector = comando.ExecuteReader
+            While lector.Read()
+                dg.Rows.Add(lector(0), lector(1), lector(2), lector(3), lector(4), lector(5), lector(6), lector(7), lector(8), lector(9), lector(10), lector(11), lector(12), lector(13), lector(14), lector(15), lector(16), lector(17), lector(18), lector(19), lector(20), lector(21), lector(22), lector(23), lector(24), lector(25), lector(26))
+            End While
+            conexionMetasCotizador.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
+            'cadena = Err.Description
+            'cadena = cadena.Replace("'", "")
+            'Bitacora("FrmAutorizarSolicitudes", "Error al cargar el formulario", Err.Number, cadena)
+        End Try
+    End Sub
 End Module
