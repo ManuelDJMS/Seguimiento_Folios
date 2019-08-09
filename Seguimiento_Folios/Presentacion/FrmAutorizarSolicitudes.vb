@@ -7,8 +7,8 @@ Public Class FrmAutorizarSolicitudes
         MetodoMetasInf()
         comandoMetasInf = conexionMetasInf.CreateCommand
         Dim r As String
-        r = "select x1.Folio,Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Empresa, Equipo, Dias, FechaRecep, FechaVenc, Con_cot, Mensajeria_recep, Obser_retencion,
-            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[INFORMES-SERVICIOS] x2 on x1.Folio=x2.Folio"
+        r = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-entrega], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Obser_retencion,
+            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[Entrega-Equipos-Logistica] x2 on x1.Folio=x2.Folio"
         comandoMetasInf.CommandText = r
         lectorMetasInf = comandoMetasInf.ExecuteReader
         While lectorMetasInf.Read
