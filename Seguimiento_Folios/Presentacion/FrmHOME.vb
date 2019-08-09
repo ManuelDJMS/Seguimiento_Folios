@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.InteropServices
+﻿Imports System.Data.SqlClient
+Imports System.Runtime.InteropServices
 Public Class FrmHOME
     Dim banm, banb As Boolean
 #Region "FUNCIONALIDADES DEL FORMULARIO"
@@ -117,7 +118,19 @@ Public Class FrmHOME
     End Sub
 
     Private Sub BtnContactos_Click(sender As Object, e As EventArgs) Handles btnContactos.Click
+        cveOperador = InputBox("Ingrese su clave de operador: ", "Marca")
+        'MetodoMetasInf()
+        'Dim comando As New SqlCommand(R, conexionMetasInf)
+        'Dim lector As SqlDataReader
+        'comando = conexionMetasInf.CreateCommand
+        'comando.CommandText = "SELECT * FROM [ListaOperadores] where cveOper = " & cveOperador & ""
+        'lector = comando.ExecuteReader
+        'lector.Read()
+        'If cveOperador = lector(0) Then
         FrmNumFolio.Show()
+        'Else
+        '    MsgBox("Número de operador INCORRECTO")
+        'End If
     End Sub
     'Private Sub BtnContactos_Click_1(sender As Object, e As EventArgs) Handles btnContactos.Click
     '    colorearpanel(PanelMenu, PL_Contactos)

@@ -313,7 +313,7 @@ Partial Class FrmSeguimieto
         Me.rbMensajeria.Name = "rbMensajeria"
         Me.rbMensajeria.Size = New System.Drawing.Size(134, 23)
         Me.rbMensajeria.TabIndex = 263
-        Me.rbMensajeria.Text = "Solo mensajeria"
+        Me.rbMensajeria.Text = "Solo mensajería"
         Me.rbMensajeria.UseVisualStyleBackColor = True
         '
         'rbOcyMensajeria
@@ -325,7 +325,7 @@ Partial Class FrmSeguimieto
         Me.rbOcyMensajeria.Name = "rbOcyMensajeria"
         Me.rbOcyMensajeria.Size = New System.Drawing.Size(219, 23)
         Me.rbOcyMensajeria.TabIndex = 262
-        Me.rbOcyMensajeria.Text = "Orden de O.C. Y Mensajeria"
+        Me.rbOcyMensajeria.Text = "Orden de O.C. Y Mensajería"
         Me.rbOcyMensajeria.UseVisualStyleBackColor = True
         '
         'rbOc
@@ -689,6 +689,7 @@ Partial Class FrmSeguimieto
         Me.dtpfechaCertificado.Name = "dtpfechaCertificado"
         Me.dtpfechaCertificado.Size = New System.Drawing.Size(351, 24)
         Me.dtpfechaCertificado.TabIndex = 253
+        Me.dtpfechaCertificado.Visible = False
         '
         'Label2
         '
@@ -700,6 +701,7 @@ Partial Class FrmSeguimieto
         Me.Label2.Size = New System.Drawing.Size(316, 16)
         Me.Label2.TabIndex = 166
         Me.Label2.Text = "Fecha en que el metrologo entrega certificado:"
+        Me.Label2.Visible = False
         '
         'txtDatosInforme
         '
@@ -910,6 +912,7 @@ Partial Class FrmSeguimieto
         Me.dtpFechaFacturación.Name = "dtpFechaFacturación"
         Me.dtpFechaFacturación.Size = New System.Drawing.Size(276, 24)
         Me.dtpFechaFacturación.TabIndex = 253
+        Me.dtpFechaFacturación.Visible = False
         '
         'Label17
         '
@@ -921,6 +924,7 @@ Partial Class FrmSeguimieto
         Me.Label17.Size = New System.Drawing.Size(206, 16)
         Me.Label17.TabIndex = 166
         Me.Label17.Text = "Fecha de entrega facturación:"
+        Me.Label17.Visible = False
         '
         'txtMenRecep
         '
