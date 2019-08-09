@@ -20,6 +20,10 @@ Module Conexiones
     Public empresafrm, Contacto, Referencia, corrreofrm As String
     Public cnm As String = "Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019-3; User Id=sa; Password=Met99011578a;Integrated Security=False"
     Public usuario As Integer
+
+    Public cotizador As String = "Data Source=SERVER3\COMPAC2;Initial Catalog=MetasCotizador; User Id=sa; Password=Met99011578a;Integrated Security=False"
+    Public usuario, nombreusuario As String
+
     '------------------------------------------------------------------------CONEXIONES A BASES DE DATOS-------------------------------------------------------------------------------------------
     Sub MetodoMetasInf()
         Try
