@@ -7,16 +7,12 @@ Public Class FrmAutorizarSolicitudes
         MetodoMetasInf()
         comandoMetasInf = conexionMetasInf.CreateCommand
         Dim r As String
-        r = "Select [SetUpEquipment].EquipId, EquipmentName, Model, Accuracy, Mfr, Dept, Location, CALinterval, CALCycle,CALDue,ShortNotes,IsActive,OnSite, IEEEPort, CustomerPort,
-             RS232Port,Subcontract,Automated,DtaIncluded,Catagory,Class,ItemNumber, AdditionalSepcification,TurnAroundTime,ApproxWeight,RelationItemNo,CalibrationMethod,
-             Standardization,Accreditation,ServiceDescription,Scale1Accuracy,Scale2Accuracy, Scale1Resolution, Scale2Resolution,Scale1Unit,Scale2Unit,Uncertainity,
-             ServicesId,Price,Field1,Field2,Field3,Field4,Field5,Field6,Value1,Value2,Value3,Value4,Value5,Value6
-             from [SetUpEquipment] inner join SetUpEquipmentServiceMapping on [SetUpEquipment].EquipId=SetUpEquipmentServiceMapping.EquipId
-             inner join EquipmentVariable on SetUpEquipment.EquipId=EquipmentVariable.EquipID_FK"
+        r = "select x1.Folio,Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Empresa, Equipo, Dias, FechaRecep, FechaVenc, Con_cot, Mensajeria_recep, Obser_retencion,
+            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[INFORMES-SERVICIOS] x2 on x1.Folio=x2.Folio"
         comandoMetasInf.CommandText = r
         lectorMetasInf = comandoMetasInf.ExecuteReader
         While lectorMetasInf.Read
-            DGRes.Rows.Add(lectorMetasInf(0), lectorMetasInf(1), lectorMetasInf(2), lectorMetasInf(3), lectorMetasInf(4), lectorMetasInf(5), lectorMetasInf(6), lectorMetasInf(7), lectorMetasInf(8), lectorMetasInf(9), lectorMetasInf(10), lectorMetasInf(11), lectorMetasInf(12), lectorMetasInf(13), lectorMetasInf(14), lectorMetasInf(15), lectorMetasInf(16), lectorMetasInf(17), lectorMetasInf(18), lectorMetasInf(19), lectorMetasInf(20), lectorMetasInf(21), lectorMetasInf(22), lectorMetasInf(23), lectorMetasInf(24), lectorMetasInf(25), lectorMetasInf(26), lectorMetasInf(27), lectorMetasInf(28), lectorMetasInf(29), lectorMetasInf(30), lectorMetasInf(31), lectorMetasInf(32), lectorMetasInf(33), lectorMetasInf(34), lectorMetasInf(35), lectorMetasInf(36), lectorMetasInf(37), lectorMetasInf(38), lectorMetasInf(39), lectorMetasInf(40), lectorMetasInf(41), lectorMetasInf(42), lectorMetasInf(43), lectorMetasInf(44), lectorMetasInf(45), lectorMetasInf(46), lectorMetasInf(47), lectorMetasInf(48), lectorMetasInf(49))
+            DGRes.Rows.Add(lectorMetasInf(0), lectorMetasInf(1), lectorMetasInf(2), lectorMetasInf(3), lectorMetasInf(4), lectorMetasInf(5), lectorMetasInf(6), lectorMetasInf(7), lectorMetasInf(8), lectorMetasInf(9), lectorMetasInf(10), lectorMetasInf(11), lectorMetasInf(12), lectorMetasInf(13), lectorMetasInf(14), lectorMetasInf(15), lectorMetasInf(16), lectorMetasInf(17), lectorMetasInf(18), lectorMetasInf(19), lectorMetasInf(20), lectorMetasInf(21), lectorMetasInf(22), lectorMetasInf(23), lectorMetasInf(24), lectorMetasInf(25))
         End While
         alternarColorColumnas(DGRes)
     End Sub

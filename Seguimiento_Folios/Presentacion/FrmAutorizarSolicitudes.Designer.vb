@@ -262,7 +262,7 @@ Partial Class FrmAutorizarSolicitudes
         Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.DGRes.Size = New System.Drawing.Size(1109, 443)
+        Me.DGRes.Size = New System.Drawing.Size(1109, 459)
         Me.DGRes.TabIndex = 258
         '
         'Label8
@@ -447,51 +447,61 @@ Partial Class FrmAutorizarSolicitudes
         '
         'Column17
         '
+        Me.Column17.Frozen = True
         Me.Column17.HeaderText = "Mensajería Recepción"
         Me.Column17.Name = "Column17"
         '
         'Column18
         '
+        Me.Column18.Frozen = True
         Me.Column18.HeaderText = "Observaciones de Retención"
         Me.Column18.Name = "Column18"
         '
         'Column19
         '
+        Me.Column19.Frozen = True
         Me.Column19.HeaderText = "Fecha de Entrega de Certificado"
         Me.Column19.Name = "Column19"
         '
         'Column20
         '
+        Me.Column20.Frozen = True
         Me.Column20.HeaderText = "Fecha Entrega Facturación"
         Me.Column20.Name = "Column20"
         '
         'Column21
         '
+        Me.Column21.Frozen = True
         Me.Column21.HeaderText = "Datos Informes"
         Me.Column21.Name = "Column21"
         '
         'Column22
         '
+        Me.Column22.Frozen = True
         Me.Column22.HeaderText = "Orden de Compra"
         Me.Column22.Name = "Column22"
         '
         'Column23
         '
+        Me.Column23.Frozen = True
         Me.Column23.HeaderText = "Orden de Compra Necesaría"
         Me.Column23.Name = "Column23"
         '
         'Column24
         '
+        Me.Column24.Frozen = True
         Me.Column24.HeaderText = "DEBE COINCIDIR FAC - OC"
         Me.Column24.Name = "Column24"
         '
         'Column25
         '
+        Me.Column25.Frozen = True
         Me.Column25.HeaderText = "Número de Orden de Compra"
         Me.Column25.Name = "Column25"
         '
         'Column26
         '
+        Me.Column26.Frozen = True
         Me.Column26.HeaderText = "Status Folio"
         Me.Column26.Name = "Column26"
         '
