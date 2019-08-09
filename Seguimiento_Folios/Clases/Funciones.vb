@@ -53,14 +53,14 @@ Module Funciones
             End If
         Next
     End Sub
-    Public Sub busquedas(ByVal dg As DataGridView, ByVal folio As TextBox, ByVal empresa As TextBox, ByVal cot As TextBox)
+    Public Sub busquedas(ByVal dg As DataGridView, ByVal folio As TextBox, ByVal empresa As TextBox, ByVal cot As TextBox, ByVal pendientes As ComboBox, ByVal user As String)
         Try
             dg.Rows.Clear()
             MetodoMetasCotizador()
             Dim R As String = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-entrega], FechaVenc, 
             Con_cot, Num_cot, Mensajeria_recep, Obser_retencion, FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join 
             [METASINF-2019-3].[dbo].[Entrega-Equipos-Logistica] x2 on x1.Folio=x2.Folio where x1.Folio like '" & folio.Text & "%' and Cliente like '" & empresa.Text & "%'
-            and Num_Cot like '" & cot.Text & "%'"
+            and Num_Cot like '" & cot.Text & "%' and Pendientes like '" & pendientes.Text & "%' and Cve_operador=" & user
             Dim comando As New SqlCommand(R, conexionMetasCotizador)
             Dim lector As SqlDataReader
             lector = comando.ExecuteReader
