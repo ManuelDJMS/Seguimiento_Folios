@@ -138,6 +138,7 @@ Partial Class FrmHOME
         Me.btnConfirmacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnConfirmacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnConfirmacion.UseVisualStyleBackColor = True
+        Me.btnConfirmacion.Visible = False
         '
         'PL_Confirmacion
         '
@@ -166,6 +167,7 @@ Partial Class FrmHOME
         Me.btnRecordatorios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnRecordatorios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnRecordatorios.UseVisualStyleBackColor = True
+        Me.btnRecordatorios.Visible = False
         '
         'PL_Recordatorio
         '
@@ -194,6 +196,7 @@ Partial Class FrmHOME
         Me.btnPreFact.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnPreFact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnPreFact.UseVisualStyleBackColor = True
+        Me.btnPreFact.Visible = False
         '
         'PL_PreFact
         '
@@ -222,6 +225,7 @@ Partial Class FrmHOME
         Me.btnOrdenVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnOrdenVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnOrdenVenta.UseVisualStyleBackColor = True
+        Me.btnOrdenVenta.Visible = False
         '
         'PL_OrdenVenta
         '

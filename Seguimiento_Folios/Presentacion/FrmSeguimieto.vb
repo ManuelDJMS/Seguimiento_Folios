@@ -2,8 +2,7 @@
 Public Class FrmSeguimieto
     Dim equipo, CA, facAd, CONC, UOC, OCN, FACOC, pendientes As String
     Dim numCot As Integer
-
-    Dim dias, cveoperador, OC As Integer
+    Dim dias, OC As Integer
     Dim lector As SqlDataReader
     Private Sub FrmSeguimieto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ''Try
@@ -12,7 +11,7 @@ Public Class FrmSeguimieto
              REL.[Mensajeria], isnull([TIPO],'-'),[DatosdelInforme], isnull([NumCot], '') as NumCot, [Status], [CveOperador], [Orden de compra] FROM [Recepcion-Equipos-Logistica] REL  
             INNER JOIN [INFORMES-SERVICIOS] INF  ON REL.[Folio] = INF.[Folio]
             INNER JOIN [Contactos-Clientes-Usuarios] CCU on REL.[Cvempresa] = CCU.[Clavempresa]
-            INNER JOIN [MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa] where REL.[Folio] = " & folio & " and [CveOperador] " & cveoperador & ""
+            INNER JOIN [MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa] where REL.[Folio] = " & folio & ""
         Dim comando As New SqlCommand(R, conexionMetasInf)
 
         lector = comando.ExecuteReader
