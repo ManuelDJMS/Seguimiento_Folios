@@ -15,7 +15,7 @@ Public Class FrmSeguimieto
         Dim comando As New SqlCommand(R, conexionMetasInf)
 
         lector = comando.ExecuteReader
-        MsgBox(R)
+        'MsgBox(R)
         lector.Read()
             'MsgBox(lector(1))
             lblNumFolio.Text = lector(0)
