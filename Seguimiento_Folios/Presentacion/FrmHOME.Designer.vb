@@ -278,7 +278,7 @@ Partial Class FrmHOME
         Me.btnContactos.Name = "btnContactos"
         Me.btnContactos.Size = New System.Drawing.Size(193, 53)
         Me.btnContactos.TabIndex = 44
-        Me.btnContactos.Text = "Clientes"
+        Me.btnContactos.Text = "Nuevo Folio"
         Me.btnContactos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnContactos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnContactos.UseVisualStyleBackColor = True
