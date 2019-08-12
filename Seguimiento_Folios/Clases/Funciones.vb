@@ -5,6 +5,7 @@ Module Funciones
     Public bandera As Boolean
     Public folio As Integer
     Public cveOperador As Integer
+    Public Cant As Integer = 0
 
     Public Sub Bitacora(Formulario As String, Evento As String, error1 As String, Descripcion As String)
         Try

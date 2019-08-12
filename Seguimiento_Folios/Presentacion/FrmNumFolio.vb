@@ -36,4 +36,32 @@
             ' Button2.BackColor = Color.FromArgb(4, 41, 68)
         End If
     End Sub
+
+    Private Sub btBuscar_Enter(sender As Object, e As EventArgs) Handles btBuscar.Enter
+        folio = txtBuscarFolio.Text
+        'FrmSeguimieto.ShowDialog()
+        'Me.Close()
+        colorearpanel(FrmHOME.PanelMenu, FrmHOME.PL_Contactos)
+        AbrirFormEnPanel(Of FrmSeguimieto)()
+        Me.Close()
+    End Sub
+
+    Private Sub txtBuscarFolio_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscarFolio.KeyDown
+        Try
+            Select Case e.KeyData
+                Case Keys.Enter
+                    folio = txtBuscarFolio.Text
+                    'FrmSeguimieto.ShowDialog()
+                    'Me.Close()
+                    colorearpanel(FrmHOME.PanelMenu, FrmHOME.PL_Contactos)
+                    AbrirFormEnPanel(Of FrmSeguimieto)()
+                    Me.Close()
+            End Select
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("Sesión", "Error al iniciar el formulario", Err.Number, cadena)
+        End Try
+    End Sub
 End Class
