@@ -7,8 +7,8 @@ Public Class FrmAutorizarSolicitudes
         MetodoMetasInf()
         comandoMetasInf = conexionMetasInf.CreateCommand
         Dim r As String
-        r = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-entrega], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Obser_retencion,
-            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[Entrega-Equipos-Logistica] x2 on x1.Folio=x2.Folio where Cve_operador=17"
+        r = "select distinct x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Obser_retencion,
+            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where Cve_operador=17"
         comandoMetasInf.CommandText = r
         lectorMetasInf = comandoMetasInf.ExecuteReader
         While lectorMetasInf.Read
@@ -188,25 +188,25 @@ Public Class FrmAutorizarSolicitudes
     End Sub
 
     Private Sub TxtFolio_TextChanged(sender As Object, e As EventArgs) Handles txtFolio.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
     End Sub
 
     Private Sub TxtNombreE_TextChanged(sender As Object, e As EventArgs) Handles txtNombreE.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
     End Sub
 
     Private Sub TxtNumCot_TextChanged(sender As Object, e As EventArgs) Handles txtNumCot.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPendientes.SelectedIndexChanged
         Try
             DGRes.Rows.Clear()
             MetodoMetasCotizador()
-            Dim R As String = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-entrega], FechaVenc, 
+            Dim R As String = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, 
             Con_cot, Num_cot, Mensajeria_recep, Obser_retencion, FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join 
-            [METASINF-2019-3].[dbo].[Entrega-Equipos-Logistica] x2 on x1.Folio=x2.Folio where x1.Folio like '" & txtFolio.Text & "%' and Cliente like '" & txtNombreE.Text & "%'
-            and Num_Cot like '" & txtNumCot.Text & "%' and Pendientes like '" & cbPendientes.Text & "%' and Cve_operador=" & usuario
+            [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where x1.Folio like '" & txtFolio.Text & "%' and Cliente like '" & txtNombreE.Text & "%'
+            and Num_Cot like '" & txtNumCot.Text & "%' and Pendientes like '" & cbPendientes.Text & "%' and Num_orde_de_compra like'" & txtNumCompra.Text & "%' and Cve_operador=17"
             Dim comando As New SqlCommand(R, conexionMetasCotizador)
             Dim lector As SqlDataReader
             lector = comando.ExecuteReader
@@ -233,7 +233,7 @@ Public Class FrmAutorizarSolicitudes
             comando.Connection = conexion
             comando.Transaction = transaction
             For i = 0 To DGRes.Rows.Count - 2
-                r = "update [MetasCotizador].[dbo].[Seguimiento_folios] set Pendientes='" & (DGRes.Item(3, i).Value).Replace("'", "") & "',Fac_Adelantado='" & (DGRes.Item(4, i).Value).Replace("'", "") & "',
+                r = "update [MetasCotizador].[dbo].[Segumiento_folios] set Pendientes='" & (DGRes.Item(3, i).Value).Replace("'", "") & "',Fac_Adelantado='" & (DGRes.Item(4, i).Value).Replace("'", "") & "',
                 CA='" & (DGRes.Item(5, i).Value) & "', Combinado_con='" & (DGRes.Item(6, i).Value) & "',Operador_ext='" & (DGRes.Item(7, i).Value) & "',
                 Cierre_folio='" & (DGRes.Item(8, i).Value) & "',Credito='" & DGRes.Item(9, i).Value & "',Observaciones='" & (DGRes.Item(10, i).Value) & "',
                 Equipo='" & (DGRes.Item(11, i).Value) & "',Dias=" & Val(DGRes.Item(12, i).Value) & ",FechaVenc='" & (DGRes.Item(13, i).Value) & "',
@@ -271,5 +271,9 @@ Public Class FrmAutorizarSolicitudes
         'Catch ex As Exception
         '    MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
         'End Try
+    End Sub
+
+    Private Sub TxtNumCompra_TextChanged(sender As Object, e As EventArgs) Handles txtNumCompra.TextChanged
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
     End Sub
 End Class
