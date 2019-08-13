@@ -8,7 +8,7 @@ Public Class FrmAutorizarSolicitudes
         comandoMetasInf = conexionMetasInf.CreateCommand
         Dim r As String
         r = "select distinct x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Obser_retencion,
-            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where Cve_operador=17"
+            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where Cve_operador=" & cveOperador
         comandoMetasInf.CommandText = r
         lectorMetasInf = comandoMetasInf.ExecuteReader
         While lectorMetasInf.Read
@@ -19,135 +19,6 @@ Public Class FrmAutorizarSolicitudes
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
         Me.Dispose()
     End Sub
-
-    Sub consultaContactos(ByVal CustomerId As Integer)
-        'Try
-        '    MetodoLIMS()
-        '    Dim R As String = "select isnull(CustAccountNo,'-'), isnull(FirstName,'-'), isnull(MiddleName,'-'), isnull(LastName,'-'),
-        '                        isnull(Phone,'-'), isnull(Mobile,'-'), isnull(Email,'-'), isnull(CompanyName,'-'), isnull(KeyFiscal,'-') 
-        '                        from [SetupCustomerDetails] where [SetupCustomerDetails].[CustomerId]=" & CustomerId & ""
-        '    Dim comando As New SqlCommand(R, conexionLIMS)
-        '    Dim lector As SqlDataReader
-        '    lector = comando.ExecuteReader
-        '    lector.Read()
-        '    txtNumeroDeCuenta.Text = lector(0)
-        '    'txtNombreDeContacto.Text = lector(1) & " " & lector(2) & " " & lector(3)
-        '    txtTelefono.Text = lector(4)
-        '    txtCelular.Text = lector(5)
-        '    txtCorreo1.Text = lector(6)
-        '    txtNombreCompania.Text = lector(7)
-        '    txtKeyFiscal.Text = lector(8)
-        '    lector.Close()
-        '    conexionLIMS.Close()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-        '    cadena = Err.Description
-        '    cadena = cadena.Replace("'", "")
-        '    Bitacora("FrmAutorizarSolicitudes", "Error en Consulta Contactos", Err.Number, cadena)
-        'End Try
-    End Sub
-
-    Sub consultaCot(ByVal numCot As Integer)
-        'Try
-        '    MetodoMetasCotizador()
-        '    Dim R As String
-        '    R = "select isnull(Referencia,'-'), isnull(Observaciones,'-'), isnull(FechaDesde,'-'), isnull(FechaHasta,'-'),
-        '        isnull(Subtotal,'-'), isnull(IVA,'-'), isnull(Total,'-') from Cotizaciones where Cotizaciones.NumCot=" & numCot & ""
-        '    Dim comando As New SqlCommand(R, conexionMetasCotizador)
-        '    Dim lector As SqlDataReader
-        '    lector = comando.ExecuteReader
-        '    lector.Read()
-        '    txtReferencia.Text = lector(0)
-        '    txtObservaciones.Text = lector(1)
-        '    txtFechaDesde.Text = lector(2)
-        '    txtFechaHasta.Text = lector(3)
-        '    txtSubtotal.Text = lector(4)
-        '    txtIVA.Text = lector(5)
-        '    txtTotal.Text = lector(6)
-        '    lector.Close()
-        '    R = "select NumCot, ItemNumber, RelationItemNo, EquipmentName, Mfr, Model, SrlNo, Accuracy, Price, CantidadReal from DetalleCotizaciones
-        '     inner join" & servidor & "[SetupEquipment] Equipos on DetalleCotizaciones.EquipId=Equipos.EquipId
-        '     inner join" & servidor & "[SetupEquipmentServiceMapping] Precio on Equipos.EquipId=Precio.EquipId where NumCot=" & numCot
-        '    comando.CommandText = R
-        '    lector = comando.ExecuteReader
-        '    While lector.Read
-        '        dgCot.Rows.Add(lector(1), lector(2), lector(3), lector(4), lector(5), lector(6), lector(7), lector(8), lector(9))
-        '    End While
-        '    lector.Close()
-        '    conexionMetasCotizador.Close()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-        '    cadena = Err.Description
-        '    cadena = cadena.Replace("'", "")
-        '    Bitacora("FrmAutorizarSolicitudes", "Error al cargar la consulta de la cotización", Err.Number, cadena)
-        'End Try
-    End Sub
-
-
-
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    'Private Sub txtNumeroDeCuentaB_TextChanged(sender As Object, e As EventArgs) Handles txtFolio.TextChanged
-    '    Try
-    '        For Each row As DataGridViewRow In DGRes.Rows
-    '            row.Selected = False
-    '            If CStr(row.Cells(1).Value) = txtFolio.Text Then
-    '                row.Selected = True
-    '                Exit For
-    '            ElseIf CStr(row.Cells(0).Value).ToLower = Nothing Then
-    '                row.Selected = False
-    '            Else
-    '                row.Selected = False
-    '            End If
-    '        Next
-    '    Catch ex As Exception
-    '        MsgBox("No se encuentra dicho número de cotización.", MsgBoxStyle.Exclamation)
-    '    End Try
-    'End Sub
-
-    'Private Sub BtSinCot_Click(sender As Object, e As EventArgs) Handles btSinCot.Click
-    '    FrmFiltrar.Show()
-    'End Sub
-
-    'Private Sub TxtNombreE_TextChanged(sender As Object, e As EventArgs) Handles txtNombreE.TextChanged
-    '    busquedas(DGRes, TextEmail, txtCP, txtNombreE, TextDom, TextTel)
-    'End Sub
-
-    'Private Sub TextDom_TextChanged(sender As Object, e As EventArgs) Handles TextDom.TextChanged
-    '    busquedas(DGRes, TextEmail, txtCP, txtNombreE, TextDom, TextTel)
-    'End Sub
-
-    'Private Sub TextEmail_TextChanged(sender As Object, e As EventArgs) Handles TextEmail.TextChanged
-    '    busquedas(DGRes, TextEmail, txtCP, txtNombreE, TextDom, TextTel)
-    'End Sub
-
-    'Private Sub TxtCP_TextChanged(sender As Object, e As EventArgs) Handles txtCP.TextChanged
-    '    busquedas(DGRes, TextEmail, txtCP, txtNombreE, TextDom, TextTel)
-    'End Sub
-
-    'Private Sub TextTel_TextChanged(sender As Object, e As EventArgs) Handles TextTel.TextChanged
-    '    busquedas(DGRes, TextEmail, txtCP, txtNombreE, TextDom, TextTel)
-    'End Sub
-
-    'Private Sub DGRes_RowHeaderMouseClick_1(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGRes.RowHeaderMouseClick
-    '    Try
-    '        Dim numCot As String
-    '        numCot = DGRes.Rows(e.RowIndex).Cells(1).Value.ToString()
-    '        CustimerId = DGRes.Rows(e.RowIndex).Cells(12).Value.ToString()
-    '        txtClaveRecopilada.Text = numCot
-    '        consultaContactos(CustimerId)
-    '        consultaCot(numCot)
-    '        TabConsulta.SelectTab(1)
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-    '        cadena = Err.Description
-    '        cadena = cadena.Replace("'", "")
-    '        Bitacora("FrmAutorizarSolicitudes", "Error al seleccionar una cotización", Err.Number, cadena)
-    '    End Try
-    'End Sub
 
     Private Sub RbTodos_CheckedChanged(sender As Object, e As EventArgs) Handles RbTodos.CheckedChanged
         For i = 1 To DGRes.Columns.Count
@@ -188,15 +59,15 @@ Public Class FrmAutorizarSolicitudes
     End Sub
 
     Private Sub TxtFolio_TextChanged(sender As Object, e As EventArgs) Handles txtFolio.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, cveOperador)
     End Sub
 
     Private Sub TxtNombreE_TextChanged(sender As Object, e As EventArgs) Handles txtNombreE.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, cveOperador)
     End Sub
 
     Private Sub TxtNumCot_TextChanged(sender As Object, e As EventArgs) Handles txtNumCot.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, cveOperador)
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPendientes.SelectedIndexChanged
@@ -206,7 +77,7 @@ Public Class FrmAutorizarSolicitudes
             Dim R As String = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, 
             Con_cot, Num_cot, Mensajeria_recep, Obser_retencion, FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join 
             [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where x1.Folio like '" & txtFolio.Text & "%' and Cliente like '" & txtNombreE.Text & "%'
-            and Num_Cot like '" & txtNumCot.Text & "%' and Pendientes like '" & cbPendientes.Text & "%' and Num_orde_de_compra like'" & txtNumCompra.Text & "%' and Cve_operador=17"
+            and Num_Cot like '" & txtNumCot.Text & "%' and Pendientes like '" & cbPendientes.Text & "%' and Num_orde_de_compra like'" & txtNumCompra.Text & "%' and Cve_operador= " & cveOperador
             Dim comando As New SqlCommand(R, conexionMetasCotizador)
             Dim lector As SqlDataReader
             lector = comando.ExecuteReader
@@ -241,8 +112,7 @@ Public Class FrmAutorizarSolicitudes
                 Obser_retencion='" & (DGRes.Item(18, i).Value) & "',FMC='" & (DGRes.Item(19, i).Value) & "',FEF='" & (DGRes.Item(20, i).Value) & "',
                 datos_informes='" & (DGRes.Item(21, i).Value) & "',OC='" & (DGRes.Item(22, i).Value) & "',OC_necesaria='" & (DGRes.Item(23, i).Value) & "',
                 fac_oc='" & (DGRes.Item(24, i).Value) & "',Num_orde_de_compra='" & (DGRes.Item(25, i).Value) & "',
-                Status_folio='" & (DGRes.Item(26, i).Value) & "' where Folio='" & DGRes.Item(0, i).Value & "' and Cve_Operador=17"
-                MsgBox(r)
+                Status_folio='" & (DGRes.Item(26, i).Value) & "' where Folio='" & DGRes.Item(0, i).Value & "' and Cve_Operador= " & cveOperador
                 comando.CommandText = r
                 comando.ExecuteNonQuery()
 
@@ -274,6 +144,6 @@ Public Class FrmAutorizarSolicitudes
     End Sub
 
     Private Sub TxtNumCompra_TextChanged(sender As Object, e As EventArgs) Handles txtNumCompra.TextChanged
-        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, usuario)
+        busquedas(DGRes, txtFolio, txtNombreE, txtNumCot, cbPendientes, txtNumCompra, cveOperador)
     End Sub
 End Class

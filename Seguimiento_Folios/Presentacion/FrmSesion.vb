@@ -65,12 +65,13 @@ Public Class FrmSesion
                             Dim lector As SqlDataReader
                             comando.Connection = conexion1
                             comando.Transaction = transaction
-                            Dim r As String = "select idUsuario, Login, Password, Rol from Usuarios where Login= " & "'" & txtuser.Text & "'"
+                            Dim r As String = "select idUsuario, login, password, cve from Usuarios where Login= " & "'" & txtuser.Text & "'"
                             comando.CommandText = r
                             lector = comando.ExecuteReader()
                             lector.Read()
                             usuario = lector(0)
                             If txtuser.Text = lector(1) And txtpass.Text = lector(2) Then
+                                cveOperador = lector(3)
                                 lector.Close()
                                 MsgBox("Usuario Correcto, BIENVENIDO", MsgBoxStyle.Information)
                                 FrmHOME.Show()
@@ -111,14 +112,15 @@ Public Class FrmSesion
                             lector = comando.ExecuteReader()
                             lector.Read()
                             usuario = lector(0)
-                            If txtuser.Text = lector(1) And txtpass.Text = lector(2) Then
-                                lector.Close()
-                                MsgBox("Usuario Correcto, BIENVENIDO", MsgBoxStyle.Information)
-                                FrmHOME.Show()
-                                conexion1.Close()
-                                Me.Dispose()
-                            Else
-                                MsgBox("Contraseña incorrecta", MsgBoxStyle.Information)
+                    If txtuser.Text = lector(1) And txtpass.Text = lector(2) Then
+                        cveOperador = lector(3)
+                        lector.Close()
+                        MsgBox("Usuario Correcto, BIENVENIDO", MsgBoxStyle.Information)
+                        FrmHOME.Show()
+                        conexion1.Close()
+                        Me.Dispose()
+                    Else
+                        MsgBox("Contraseña incorrecta", MsgBoxStyle.Information)
                                 txtpass.Clear()
                             End If
                         End Using
