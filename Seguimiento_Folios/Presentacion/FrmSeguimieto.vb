@@ -7,7 +7,7 @@ Public Class FrmSeguimieto
     Private Sub FrmSeguimieto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             MetodoMetasInf()
-            R = "select DISTINCT REL.[Folio], [Descripcion], INF.[Empresa], INF.[Usuario],[Tel],isnull([Credito],'-'), [Fecha-recep],
+            R = "select DISTINCT REL.[Folio], [Descripcion], INF.[Empresa], INF.[Usuario],CCU.Email,[Tel],isnull([Credito],'-'), [Fecha-recep],
              REL.[Mensajeria], isnull([TIPO],'-'),[DatosdelInforme], isnull([NumCot], '') as NumCot, [Status], [CveOperador], [Orden de compra],[Peso kg] FROM [Recepcion-Equipos-Logistica] REL  
             INNER JOIN [INFORMES-SERVICIOS] INF  ON REL.[Folio] = INF.[Folio]
             INNER JOIN [Contactos-Clientes-Usuarios] CCU on INF.[ClavecontactoConsign] = CCU.[Clavempresa]
@@ -136,27 +136,26 @@ Public Class FrmSeguimieto
             cboOperadores2.Text = " "
         End If
         MetodoMetasCotizador()
-        'Try
-        'Dim fechaVen, FEC, FEF As Date
-        Dim fechaVen As Date
+        Try
+            'Dim fechaVen, FEC, FEF As Date
+            Dim fechaVen As Date
             fechaVen = Convert.ToDateTime(dtpFechaVencimiento.Text).ToShortDateString
-        'FEC = Convert.ToDateTime(dtpfechaCertificado.Text).ToShortDateString
-        'FEF = Convert.ToDateTime(dtpfechaCertificado.Text).ToShortDateString
-        Dim operadores As String = cboOperadores.Text + cboOperadores2.Text
-        'MsgBox(operadores)
-        R = "insert into [MetasCotizador].[dbo].[Segumiento_folios] ([Folio],[Cve_operador],[Pendientes],[Fac_Adelantado],[CA],[Combinado_con],[Operador_ext],[Cierre_folio],[Credito],[Observaciones],[Equipo],[Dias],[FechaVenc],[Con_cot],[Num_cot],[Mensajeria_recep],[Obser_retencion],[FMC],[FEF],[datos_informes],[OC],[OC_necesaria],[fac_oc],[Num_orde_de_compra],[Status_folio],[Domicilio_entrega],[Mensajeria_retorno],[obser_tecnicas])
+            'FEC = Convert.ToDateTime(dtpfechaCertificado.Text).ToShortDateString
+            'FEF = Convert.ToDateTime(dtpfechaCertificado.Text).ToShortDateString
+            Dim operadores As String = cboOperadores.Text + cboOperadores2.Text
+            'MsgBox(operadores)
+            R = "insert into [MetasCotizador].[dbo].[Segumiento_folios] ([Folio],[Cve_operador],[Pendientes],[Fac_Adelantado],[CA],[Combinado_con],[Operador_ext],[Cierre_folio],[Credito],[Observaciones],[Equipo],[Dias],[FechaVenc],[Con_cot],[Num_cot],[Mensajeria_recep],[Obser_retencion],[FMC],[FEF],[datos_informes],[OC],[OC_necesaria],[fac_oc],[Num_orde_de_compra],[Status_folio],[Domicilio_entrega],[Mensajeria_retorno],[obser_tecnicas])
         values(" & Val(lblNumFolio.Text) & "," & Val(cveOperador) & ",'" & (pendientes) & "', '" & facAd & "','" & CA & "','" & txtCombinadoCon.Text & "', '" & operadores & "','" & cboCierra.Text & "', '" & txtCredito.Text & "', '" & txtObserPendientes.Text & "','" & txtEquipo.Text & "'," & Val(txtDias.Text) & ", '" & fechaVen & "', '" & CONC & "',  " & Val(txtNumCot.Text) & ", '" & txtMenRecep.Text & "','" & txtObserRetencion.Text & "','0000-00-00 ','0000-00-00', '" & txtDatosInforme.Text & "','" & UOC & "','" & OCN & "','" & FACOC & "','" & txtNumComp.Text & "', '" & cboStatus.Text & "', '" & txtDomEntrega.Text & "','" & txtMenEnv.Text & "', '" & txtObserTec.Text & "')"
-        Dim comando2 As New SqlCommand(R, conexionMetasCotizador)
+            Dim comando2 As New SqlCommand(R, conexionMetasCotizador)
             comando2.CommandText = R
-        MsgBox(R)
-        comando2.ExecuteNonQuery()
+            comando2.ExecuteNonQuery()
             MsgBox("FOLIO NUM: " & folio & ".  ACTUALIZADO")
             Me.Close()
-        'Catch ex As Exception
-        'MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-        'cadena = Err.Description
-        'cadena = cadena.Replace("'", "")
-        'Bitacora("FrmSeguimiento", "Error al grabar", Err.Number, cadena)
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
+        cadena = Err.Description
+        cadena = cadena.Replace("'", "")
+        Bitacora("FrmSeguimiento", "Error al grabar", Err.Number, cadena)
+        End Try
     End Sub
 End Class
