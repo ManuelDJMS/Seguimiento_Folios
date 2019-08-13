@@ -119,7 +119,7 @@ Public Class FrmHOME
 
     Private Sub BtnContactos_Click(sender As Object, e As EventArgs) Handles btnContactos.Click
         Try
-            cveOperador = InputBox("Ingrese su clave de operador: ", "Información de operador")
+            'cveOperador = InputBox("Ingrese su clave de operador: ", "Información de operador")
             'MetodoMetasInf()
             'Dim comando As New SqlCommand(R, conexionMetasInf)
             ''Dim lector As SqlDataReader
