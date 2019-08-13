@@ -7,11 +7,11 @@ Public Class FrmSeguimieto
     Private Sub FrmSeguimieto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             MetodoMetasInf()
-            R = "select REL.[Folio], [Descripcion], CCU.[Compania], [Nombre] +' '+[Apellidos] AS Cliente,isnull([Email],'-'),[Tel],isnull([Credito],'-'), [Fecha-recep],
+            R = "select DISTINCT REL.[Folio], [Descripcion], INF.[Empresa], INF.[Usuario],[Tel],isnull([Credito],'-'), [Fecha-recep],
              REL.[Mensajeria], isnull([TIPO],'-'),[DatosdelInforme], isnull([NumCot], '') as NumCot, [Status], [CveOperador], [Orden de compra],[Peso kg] FROM [Recepcion-Equipos-Logistica] REL  
             INNER JOIN [INFORMES-SERVICIOS] INF  ON REL.[Folio] = INF.[Folio]
-            INNER JOIN [Contactos-Clientes-Usuarios] CCU on REL.[Cvempresa] = CCU.[Clavempresa]
-            INNER JOIN [MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa]  where REL.[Folio] = " & folio & ""
+            INNER JOIN [Contactos-Clientes-Usuarios] CCU on INF.[ClavecontactoConsign] = CCU.[Clavempresa]
+            INNER JOIN [MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa]  = " & folio & ""
             Dim comando As New SqlCommand(R, conexionMetasInf)
 
             lector = comando.ExecuteReader

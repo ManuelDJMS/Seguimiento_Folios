@@ -26,6 +26,8 @@ Partial Class FrmSeguimieto
         Me.Label47 = New System.Windows.Forms.Label()
         Me.txtNombreDeContacto = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtObserTec = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.RbSICA = New System.Windows.Forms.RadioButton()
         Me.RbNOCA = New System.Windows.Forms.RadioButton()
@@ -54,6 +56,9 @@ Partial Class FrmSeguimieto
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtTelefono = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cboOperadores2 = New System.Windows.Forms.ComboBox()
+        Me.txtPeso = New System.Windows.Forms.TextBox()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.cboCierra = New System.Windows.Forms.ComboBox()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.dtpFechaVencimiento = New System.Windows.Forms.DateTimePicker()
@@ -105,11 +110,6 @@ Partial Class FrmSeguimieto
         Me.txtMenEnv = New System.Windows.Forms.TextBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.btGuardar = New System.Windows.Forms.Button()
-        Me.txtObserTec = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtPeso = New System.Windows.Forms.TextBox()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.cboOperadores2 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -175,6 +175,27 @@ Partial Class FrmSeguimieto
         Me.GroupBox2.TabIndex = 249
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Informacion General"
+        '
+        'txtObserTec
+        '
+        Me.txtObserTec.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtObserTec.Location = New System.Drawing.Point(5, 508)
+        Me.txtObserTec.Multiline = True
+        Me.txtObserTec.Name = "txtObserTec"
+        Me.txtObserTec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtObserTec.Size = New System.Drawing.Size(378, 60)
+        Me.txtObserTec.TabIndex = 277
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Black
+        Me.Label8.Location = New System.Drawing.Point(6, 488)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(154, 16)
+        Me.Label8.TabIndex = 276
+        Me.Label8.Text = "Observación técnicas:"
         '
         'Panel2
         '
@@ -386,7 +407,7 @@ Partial Class FrmSeguimieto
         'txtCredito
         '
         Me.txtCredito.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCredito.Location = New System.Drawing.Point(89, 138)
+        Me.txtCredito.Location = New System.Drawing.Point(89, 136)
         Me.txtCredito.Multiline = True
         Me.txtCredito.Name = "txtCredito"
         Me.txtCredito.Size = New System.Drawing.Size(170, 23)
@@ -397,7 +418,7 @@ Partial Class FrmSeguimieto
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(8, 145)
+        Me.Label4.Location = New System.Drawing.Point(8, 143)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 16)
         Me.Label4.TabIndex = 174
@@ -441,18 +462,19 @@ Partial Class FrmSeguimieto
         Me.txtCorreo.AutoSize = True
         Me.txtCorreo.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCorreo.ForeColor = System.Drawing.Color.Black
-        Me.txtCorreo.Location = New System.Drawing.Point(86, 94)
+        Me.txtCorreo.Location = New System.Drawing.Point(86, 85)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(122, 17)
         Me.txtCorreo.TabIndex = 162
         Me.txtCorreo.Text = "Correo electronico"
+        Me.txtCorreo.Visible = False
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Black
-        Me.Label10.Location = New System.Drawing.Point(8, 120)
+        Me.Label10.Location = New System.Drawing.Point(8, 102)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 16)
         Me.Label10.TabIndex = 159
@@ -463,18 +485,19 @@ Partial Class FrmSeguimieto
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Black
-        Me.Label9.Location = New System.Drawing.Point(8, 95)
+        Me.Label9.Location = New System.Drawing.Point(6, 86)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(56, 16)
         Me.Label9.TabIndex = 163
         Me.Label9.Text = "Correo:"
+        Me.Label9.Visible = False
         '
         'txtTelefono
         '
         Me.txtTelefono.AutoSize = True
         Me.txtTelefono.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelefono.ForeColor = System.Drawing.Color.Black
-        Me.txtTelefono.Location = New System.Drawing.Point(86, 118)
+        Me.txtTelefono.Location = New System.Drawing.Point(86, 100)
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(128, 17)
         Me.txtTelefono.TabIndex = 158
@@ -514,6 +537,35 @@ Partial Class FrmSeguimieto
         Me.GroupBox1.TabIndex = 250
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información del equipo y Certificado"
+        '
+        'cboOperadores2
+        '
+        Me.cboOperadores2.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboOperadores2.FormattingEnabled = True
+        Me.cboOperadores2.Location = New System.Drawing.Point(326, 169)
+        Me.cboOperadores2.Name = "cboOperadores2"
+        Me.cboOperadores2.Size = New System.Drawing.Size(158, 25)
+        Me.cboOperadores2.TabIndex = 275
+        '
+        'txtPeso
+        '
+        Me.txtPeso.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPeso.Location = New System.Drawing.Point(535, 110)
+        Me.txtPeso.Multiline = True
+        Me.txtPeso.Name = "txtPeso"
+        Me.txtPeso.Size = New System.Drawing.Size(166, 23)
+        Me.txtPeso.TabIndex = 273
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.Black
+        Me.Label31.Location = New System.Drawing.Point(488, 112)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(41, 16)
+        Me.Label31.TabIndex = 272
+        Me.Label31.Text = "Peso:"
         '
         'cboCierra
         '
@@ -1083,56 +1135,6 @@ Partial Class FrmSeguimieto
         Me.btGuardar.TabIndex = 276
         Me.btGuardar.Text = "Guardar "
         Me.btGuardar.UseVisualStyleBackColor = False
-        '
-        'txtObserTec
-        '
-        Me.txtObserTec.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtObserTec.Location = New System.Drawing.Point(5, 508)
-        Me.txtObserTec.Multiline = True
-        Me.txtObserTec.Name = "txtObserTec"
-        Me.txtObserTec.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtObserTec.Size = New System.Drawing.Size(378, 60)
-        Me.txtObserTec.TabIndex = 277
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(6, 488)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(154, 16)
-        Me.Label8.TabIndex = 276
-        Me.Label8.Text = "Observación técnicas:"
-        '
-        'txtPeso
-        '
-        Me.txtPeso.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPeso.Location = New System.Drawing.Point(535, 110)
-        Me.txtPeso.Multiline = True
-        Me.txtPeso.Name = "txtPeso"
-        Me.txtPeso.Size = New System.Drawing.Size(166, 23)
-        Me.txtPeso.TabIndex = 273
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.Black
-        Me.Label31.Location = New System.Drawing.Point(488, 112)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(41, 16)
-        Me.Label31.TabIndex = 272
-        Me.Label31.Text = "Peso:"
-        '
-        'cboOperadores2
-        '
-        Me.cboOperadores2.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboOperadores2.FormattingEnabled = True
-        Me.cboOperadores2.Location = New System.Drawing.Point(326, 169)
-        Me.cboOperadores2.Name = "cboOperadores2"
-        Me.cboOperadores2.Size = New System.Drawing.Size(158, 25)
-        Me.cboOperadores2.TabIndex = 275
         '
         'FrmSeguimieto
         '
