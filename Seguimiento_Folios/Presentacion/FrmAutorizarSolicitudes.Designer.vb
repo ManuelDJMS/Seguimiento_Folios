@@ -22,9 +22,9 @@ Partial Class FrmAutorizarSolicitudes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmAutorizarSolicitudes))
         Me.TabConsulta = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -34,6 +34,8 @@ Partial Class FrmAutorizarSolicitudes
         Me.dgDatosG = New System.Windows.Forms.RadioButton()
         Me.RbTodos = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtNumCompra = New System.Windows.Forms.TextBox()
         Me.cbPendientes = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -46,8 +48,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.Label26 = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtNumCompra = New System.Windows.Forms.TextBox()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -75,6 +75,9 @@ Partial Class FrmAutorizarSolicitudes
         Me.Column25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column26 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column27 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column28 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column29 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column30 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TabConsulta.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DGRes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,30 +117,30 @@ Partial Class FrmAutorizarSolicitudes
         Me.DGRes.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DGRes.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGRes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(170, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(170, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGRes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18, Me.Column19, Me.Column20, Me.Column21, Me.Column22, Me.Column23, Me.Column24, Me.Column25, Me.Column26, Me.Column27})
+        Me.DGRes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column10, Me.Column11, Me.Column12, Me.Column13, Me.Column14, Me.Column15, Me.Column16, Me.Column17, Me.Column18, Me.Column19, Me.Column20, Me.Column21, Me.Column22, Me.Column23, Me.Column24, Me.Column25, Me.Column26, Me.Column27, Me.Column28, Me.Column29, Me.Column30})
         Me.DGRes.EnableHeadersVisualStyles = False
         Me.DGRes.Location = New System.Drawing.Point(14, 120)
         Me.DGRes.Name = "DGRes"
         Me.DGRes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle5
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGRes.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        Me.DGRes.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DGRes.Size = New System.Drawing.Size(1109, 463)
         Me.DGRes.TabIndex = 261
         '
@@ -211,6 +214,25 @@ Partial Class FrmAutorizarSolicitudes
         Me.GroupBox1.TabIndex = 259
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar Por"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Label2.Location = New System.Drawing.Point(612, 31)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(151, 17)
+        Me.Label2.TabIndex = 209
+        Me.Label2.Text = "N° Orden de Compra:"
+        '
+        'txtNumCompra
+        '
+        Me.txtNumCompra.Font = New System.Drawing.Font("Calibri Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumCompra.Location = New System.Drawing.Point(765, 30)
+        Me.txtNumCompra.Name = "txtNumCompra"
+        Me.txtNumCompra.Size = New System.Drawing.Size(54, 21)
+        Me.txtNumCompra.TabIndex = 210
         '
         'cbPendientes
         '
@@ -339,25 +361,6 @@ Partial Class FrmAutorizarSolicitudes
         Me.PictureBox5.TabIndex = 43
         Me.PictureBox5.TabStop = False
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Label2.Location = New System.Drawing.Point(612, 31)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 17)
-        Me.Label2.TabIndex = 209
-        Me.Label2.Text = "N° Orden de Compra:"
-        '
-        'txtNumCompra
-        '
-        Me.txtNumCompra.Font = New System.Drawing.Font("Calibri Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumCompra.Location = New System.Drawing.Point(765, 30)
-        Me.txtNumCompra.Name = "txtNumCompra"
-        Me.txtNumCompra.Size = New System.Drawing.Size(54, 21)
-        Me.txtNumCompra.TabIndex = 210
-        '
         'Column1
         '
         Me.Column1.HeaderText = "Folio"
@@ -455,48 +458,63 @@ Partial Class FrmAutorizarSolicitudes
         '
         'Column19
         '
-        Me.Column19.HeaderText = "Observaciones de Retención"
+        Me.Column19.HeaderText = "Mensajería Retorno"
         Me.Column19.Name = "Column19"
         '
         'Column20
         '
-        Me.Column20.HeaderText = "Fecha Entrega del Certificado"
+        Me.Column20.HeaderText = "Domicilio_entrega"
         Me.Column20.Name = "Column20"
         '
         'Column21
         '
-        Me.Column21.HeaderText = "Fecha Entrega Factura"
+        Me.Column21.HeaderText = "Observaciones de Retención"
         Me.Column21.Name = "Column21"
         '
         'Column22
         '
-        Me.Column22.HeaderText = "Datos Informes"
+        Me.Column22.HeaderText = "Observaciones Técnicas"
         Me.Column22.Name = "Column22"
         '
         'Column23
         '
-        Me.Column23.HeaderText = "Orden de Compra"
+        Me.Column23.HeaderText = "Fecha Entrega del Certificado"
         Me.Column23.Name = "Column23"
         '
         'Column24
         '
-        Me.Column24.HeaderText = "Orden de Compra Necesaría"
+        Me.Column24.HeaderText = "Fecha Entrega Factura"
         Me.Column24.Name = "Column24"
         '
         'Column25
         '
-        Me.Column25.HeaderText = "Factura = Orden Compra"
+        Me.Column25.HeaderText = "Datos Informes"
         Me.Column25.Name = "Column25"
         '
         'Column26
         '
-        Me.Column26.HeaderText = "N° Orden de Compra"
+        Me.Column26.HeaderText = "Orden de Compra"
         Me.Column26.Name = "Column26"
         '
         'Column27
         '
-        Me.Column27.HeaderText = "Status"
+        Me.Column27.HeaderText = "Orden de Compra Necesaría"
         Me.Column27.Name = "Column27"
+        '
+        'Column28
+        '
+        Me.Column28.HeaderText = "Factura = Orden Compra"
+        Me.Column28.Name = "Column28"
+        '
+        'Column29
+        '
+        Me.Column29.HeaderText = "N° Orden de Compra"
+        Me.Column29.Name = "Column29"
+        '
+        'Column30
+        '
+        Me.Column30.HeaderText = "Status"
+        Me.Column30.Name = "Column30"
         '
         'FrmAutorizarSolicitudes
         '
@@ -575,4 +593,7 @@ Partial Class FrmAutorizarSolicitudes
     Friend WithEvents Column25 As DataGridViewTextBoxColumn
     Friend WithEvents Column26 As DataGridViewTextBoxColumn
     Friend WithEvents Column27 As DataGridViewTextBoxColumn
+    Friend WithEvents Column28 As DataGridViewTextBoxColumn
+    Friend WithEvents Column29 As DataGridViewTextBoxColumn
+    Friend WithEvents Column30 As DataGridViewTextBoxColumn
 End Class

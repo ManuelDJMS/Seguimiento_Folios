@@ -7,12 +7,12 @@ Public Class FrmAutorizarSolicitudes
         MetodoMetasInf()
         comandoMetasInf = conexionMetasInf.CreateCommand
         Dim r As String
-        r = "select distinct x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Obser_retencion,
+        r = "select distinct x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Mensajeria_retorno, Domicilio_entrega, Obser_retencion, obser_tecnicas,
             FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where Cve_operador=" & cveOperador
         comandoMetasInf.CommandText = r
         lectorMetasInf = comandoMetasInf.ExecuteReader
         While lectorMetasInf.Read
-            DGRes.Rows.Add(lectorMetasInf(0), lectorMetasInf(1), lectorMetasInf(2), lectorMetasInf(3), lectorMetasInf(4), lectorMetasInf(5), lectorMetasInf(6), lectorMetasInf(7), lectorMetasInf(8), lectorMetasInf(9), lectorMetasInf(10), lectorMetasInf(11), lectorMetasInf(12), lectorMetasInf(13), lectorMetasInf(14), lectorMetasInf(15), lectorMetasInf(16), lectorMetasInf(17), lectorMetasInf(18), lectorMetasInf(19), lectorMetasInf(20), lectorMetasInf(21), lectorMetasInf(22), lectorMetasInf(23), lectorMetasInf(24), lectorMetasInf(25), lectorMetasInf(26))
+            DGRes.Rows.Add(lectorMetasInf(0), lectorMetasInf(1), lectorMetasInf(2), lectorMetasInf(3), lectorMetasInf(4), lectorMetasInf(5), lectorMetasInf(6), lectorMetasInf(7), lectorMetasInf(8), lectorMetasInf(9), lectorMetasInf(10), lectorMetasInf(11), lectorMetasInf(12), lectorMetasInf(13), lectorMetasInf(14), lectorMetasInf(15), lectorMetasInf(16), lectorMetasInf(17), lectorMetasInf(18), lectorMetasInf(19), lectorMetasInf(20), lectorMetasInf(21), lectorMetasInf(22), lectorMetasInf(23), lectorMetasInf(24), lectorMetasInf(25), lectorMetasInf(26), lectorMetasInf(27), lectorMetasInf(28), lectorMetasInf(29))
         End While
         alternarColorColumnas(DGRes)
     End Sub
@@ -109,10 +109,11 @@ Public Class FrmAutorizarSolicitudes
                 Cierre_folio='" & (DGRes.Item(8, i).Value) & "',Credito='" & DGRes.Item(9, i).Value & "',Observaciones='" & (DGRes.Item(10, i).Value) & "',
                 Equipo='" & (DGRes.Item(11, i).Value) & "',Dias=" & Val(DGRes.Item(12, i).Value) & ",FechaVenc='" & (DGRes.Item(13, i).Value) & "',
                 Con_cot='" & (DGRes.Item(15, i).Value) & "',Num_cot=" & Val(DGRes.Item(16, i).Value) & ",Mensajeria_recep='" & (DGRes.Item(17, i).Value) & "',
-                Obser_retencion='" & (DGRes.Item(18, i).Value) & "',FMC='" & (DGRes.Item(19, i).Value) & "',FEF='" & (DGRes.Item(20, i).Value) & "',
-                datos_informes='" & (DGRes.Item(21, i).Value) & "',OC='" & (DGRes.Item(22, i).Value) & "',OC_necesaria='" & (DGRes.Item(23, i).Value) & "',
-                fac_oc='" & (DGRes.Item(24, i).Value) & "',Num_orde_de_compra='" & (DGRes.Item(25, i).Value) & "',
-                Status_folio='" & (DGRes.Item(26, i).Value) & "' where Folio='" & DGRes.Item(0, i).Value & "' and Cve_Operador= " & cveOperador
+                Mensajeria_retorno='" & (DGRes.Item(18, i).Value) & "', Domicilio_entrega='" & (DGRes.Item(19, i).Value) & "',
+                Obser_retencion='" & (DGRes.Item(20, i).Value) & "', obser_tecnicas='" & (DGRes.Item(21, i).Value) & "',FMC='" & (DGRes.Item(22, i).Value) & "',FEF='" & (DGRes.Item(23, i).Value) & "',
+                datos_informes='" & (DGRes.Item(24, i).Value) & "',OC='" & (DGRes.Item(25, i).Value) & "',OC_necesaria='" & (DGRes.Item(26, i).Value) & "',
+                fac_oc='" & (DGRes.Item(27, i).Value) & "',Num_orde_de_compra='" & (DGRes.Item(28, i).Value) & "',
+                Status_folio='" & (DGRes.Item(29, i).Value) & "' where Folio='" & DGRes.Item(0, i).Value & "' and Cve_Operador= " & cveOperador
                 comando.CommandText = r
                 comando.ExecuteNonQuery()
 
