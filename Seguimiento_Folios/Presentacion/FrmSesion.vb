@@ -57,7 +57,7 @@ Public Class FrmSesion
             Select Case e.KeyData
                 Case Keys.Enter
                     If Me.ValidateChildren = True And txtpass.Text <> "" And txtuser.Text <> "" Then
-                        Using conexion1 As New SqlConnection(cnm)
+                        Using conexion1 As New SqlConnection(cotizador)
                             conexion1.Open()
                             Dim transaction As SqlTransaction
                             transaction = conexion1.BeginTransaction("Sample")
@@ -65,7 +65,7 @@ Public Class FrmSesion
                             Dim lector As SqlDataReader
                             comando.Connection = conexion1
                             comando.Transaction = transaction
-                            Dim r As String = "select idUsuario, login, password, cve from Usuarios where Login= " & "'" & txtuser.Text & "'"
+                            Dim r As String = "select idUsuarioAdministrador, login, password, cve from Usuarios where Login= " & "'" & txtuser.Text & "'"
                             comando.CommandText = r
                             lector = comando.ExecuteReader()
                             lector.Read()
@@ -99,19 +99,19 @@ Public Class FrmSesion
         Try
 
             If Me.ValidateChildren = True And txtpass.Text <> "" And txtuser.Text <> "" Then
-                        Using conexion1 As New SqlConnection(cnm)
-                            conexion1.Open()
-                            Dim transaction As SqlTransaction
-                            transaction = conexion1.BeginTransaction("Sample")
-                            Dim comando As SqlCommand = conexion1.CreateCommand()
-                            Dim lector As SqlDataReader
-                            comando.Connection = conexion1
-                            comando.Transaction = transaction
-                            Dim r As String = "select idUsuario, Login, Password, Rol from Usuarios where Login= " & "'" & txtuser.Text & "'"
-                            comando.CommandText = r
-                            lector = comando.ExecuteReader()
-                            lector.Read()
-                            usuario = lector(0)
+                Using conexion1 As New SqlConnection(cotizador)
+                    conexion1.Open()
+                    Dim transaction As SqlTransaction
+                    transaction = conexion1.BeginTransaction("Sample")
+                    Dim comando As SqlCommand = conexion1.CreateCommand()
+                    Dim lector As SqlDataReader
+                    comando.Connection = conexion1
+                    comando.Transaction = transaction
+                    Dim r As String = "select idUsuarioAdministrador, login, password, cve from Usuarios where login= " & "'" & txtuser.Text & "'"
+                    comando.CommandText = r
+                    lector = comando.ExecuteReader()
+                    lector.Read()
+                    usuario = lector(0)
                     If txtuser.Text = lector(1) And txtpass.Text = lector(2) Then
                         cveOperador = lector(3)
                         lector.Close()
@@ -121,10 +121,10 @@ Public Class FrmSesion
                         Me.Dispose()
                     Else
                         MsgBox("Contraseña incorrecta", MsgBoxStyle.Information)
-                                txtpass.Clear()
-                            End If
-                        End Using
-                    Else
+                        txtpass.Clear()
+                    End If
+                End Using
+            Else
                         MessageBox.Show("Faltan ingresar algunos datos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
