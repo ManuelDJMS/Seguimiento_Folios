@@ -28,7 +28,8 @@ Partial Class FrmInicio
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.SuspendLayout
+        Me.lbVersion = New System.Windows.Forms.Label()
+        Me.SuspendLayout()
         '
         'linerocket
         '
@@ -54,14 +55,25 @@ Partial Class FrmInicio
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label2.Location = New System.Drawing.Point(494, 340)
+        Me.Label2.Location = New System.Drawing.Point(457, 340)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(261, 21)
+        Me.Label2.Size = New System.Drawing.Size(235, 21)
         Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Seguimiento de Folios Versión 1.0"
+        Me.Label2.Text = "Seguimiento de Folios Versión"
         '
         'Timer1
         '
+        '
+        'lbVersion
+        '
+        Me.lbVersion.AutoSize = True
+        Me.lbVersion.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbVersion.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lbVersion.Location = New System.Drawing.Point(693, 340)
+        Me.lbVersion.Name = "lbVersion"
+        Me.lbVersion.Size = New System.Drawing.Size(58, 21)
+        Me.lbVersion.TabIndex = 12
+        Me.lbVersion.Text = "1.0.0.1"
         '
         'FrmInicio
         '
@@ -71,6 +83,7 @@ Partial Class FrmInicio
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.Seguimiento_Folios.My.Resources.Resources.metas_esta
         Me.ClientSize = New System.Drawing.Size(767, 370)
+        Me.Controls.Add(Me.lbVersion)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.linerocket)
@@ -89,4 +102,5 @@ Partial Class FrmInicio
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents lbVersion As Label
 End Class

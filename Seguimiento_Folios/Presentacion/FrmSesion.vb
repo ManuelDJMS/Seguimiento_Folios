@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmSesion
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Try
             Me.ToolTip1.Active = True
             Me.ToolTip1.IsBalloon = True
@@ -23,7 +25,6 @@ Public Class FrmSesion
             Bitacora("Sesión", "Error al iniciar el formulario", Err.Number, cadena)
         End Try
     End Sub
-
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lblHora.Text = DateTime.Now.ToString("hh:mm tt")
     End Sub
@@ -125,8 +126,8 @@ Public Class FrmSesion
                     End If
                 End Using
             Else
-                        MessageBox.Show("Faltan ingresar algunos datos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
+                MessageBox.Show("Faltan ingresar algunos datos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")

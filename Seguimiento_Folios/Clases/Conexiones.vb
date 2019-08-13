@@ -18,7 +18,7 @@ Module Conexiones
     Public banderaform As Boolean
     Public numcotfrm, Total As Integer
     Public empresafrm, Contacto, Referencia, corrreofrm As String
-    Public cnm As String = "Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019-3; User Id=sa; Password=Met99011578a;Integrated Security=False"
+    Public cnm As String = "Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019; User Id=sa; Password=Met99011578a;Integrated Security=False"
     Public usuario As Integer
 
     Public cotizador As String = "Data Source=SERVER3\COMPAC2;Initial Catalog=MetasCotizador; User Id=sa; Password=Met99011578a;Integrated Security=False"
@@ -27,7 +27,7 @@ Module Conexiones
     '------------------------------------------------------------------------CONEXIONES A BASES DE DATOS-------------------------------------------------------------------------------------------
     Sub MetodoMetasInf()
         Try
-            conexionMetasInf = New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019-3; User Id=sa; Password=Met99011578a;Integrated Security=False")
+            conexionMetasInf = New SqlConnection("Data Source=SERVER3\COMPAC2;Initial Catalog=METASINF-2019; User Id=sa; Password=Met99011578a;Integrated Security=False")
             'conexionMetasInf = New SqlConnection("Data Source=DATABASESERVER\COMPAC; Initial Catalog=MetAs_Live-pruebas; User Id=sa; Password=Contpaq1; Integrated Security=false")
             conexionMetasInf.Open()
         Catch ex As Exception

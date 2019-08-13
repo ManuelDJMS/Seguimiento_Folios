@@ -1,4 +1,4 @@
-﻿
+﻿Imports System.IO
 Imports Timer = System.Windows.Forms.Timer
 Public Class FrmInicio
     Public variable As String
@@ -37,5 +37,30 @@ Public Class FrmInicio
             FrmSesion.Show()
             Me.Dispose()
         End If
+    End Sub
+    Sub LeerArchivo()
+        Dim leer As New StreamReader("\\10.10.10.7\Public-2\INSTALACIONES COTIZADOR\Seguimiento_Folios\version.txt")
+        Try
+            'Se abre el txt para ver la version
+            While leer.Peek <> -1
+                Dim linea As String = leer.ReadLine()
+                If String.IsNullOrEmpty(linea) Then
+                    Continue While
+                End If
+                variable = (linea)
+            End While
+            leer.Close()
+            If Not variable = lbVersion.Text Then 'Verifica si la version es igual a la del txt
+                MsgBox("Existe una nueva actualizacion", MsgBoxStyle.Exclamation, "METAS COTIZADOR")
+                Dim OpenFileDialog As New OpenFileDialog
+                Process.Start("\\10.10.10.7\Public-2\INSTALACIONES COTIZADOR\Metas Cotizador\MetasCotizador.msp")
+            End If
+        Catch ex As Exception
+            MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
+        End Try
+    End Sub
+
+    Private Sub FrmInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LeerArchivo()
     End Sub
 End Class
