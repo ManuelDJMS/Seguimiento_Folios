@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-todo-list-48.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -193,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\metas_esta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8-todo-list-48.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
