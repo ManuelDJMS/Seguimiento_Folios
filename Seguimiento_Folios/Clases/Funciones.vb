@@ -77,4 +77,18 @@ Module Funciones
             'Bitacora("FrmAutorizarSolicitudes", "Error al cargar el formulario", Err.Number, cadena)
         End Try
     End Sub
+
+    Public Function ListDiasFectivos() As List(Of DateTime)
+        Dim listaDiasFestivos As New List(Of DateTime)()
+        MetodoMetasCotizador()
+        Dim r As String = "SELECT Dias FROM Dias_Festivos"
+        Dim comando As New SqlCommand(r, conexionMetasCotizador)
+        Dim lector As SqlDataReader
+        lector = comando.ExecuteReader
+        While lector.Read()
+            listaDiasFestivos.Add(Convert.ToDateTime(lector("Dias")))
+        End While
+        Return listaDiasFestivos
+    End Function
+
 End Module

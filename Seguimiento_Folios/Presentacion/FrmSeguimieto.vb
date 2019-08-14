@@ -76,9 +76,13 @@ Public Class FrmSeguimieto
     End Sub
     Sub DiasHab()
         Dim Ini As DateTime = dtpFechaRecepcion.Value
-        Dim Fin As Date = dtpFechaRecepcion.Value.AddDays(15)
+        Dim Fin As Date = dtpFechaRecepcion.Value.AddDays(40)
+        Dim listaDiasFestivos As List(Of DateTime) = ListDiasFectivos()
         While Ini <> Fin
             If (Ini.DayOfWeek = DayOfWeek.Saturday Or Ini.DayOfWeek = DayOfWeek.Sunday) Then
+                dias = dias + 1
+            End If
+            If listaDiasFestivos.Contains(Ini) Then
                 dias = dias + 1
             End If
             Ini = Ini.AddDays(1)
