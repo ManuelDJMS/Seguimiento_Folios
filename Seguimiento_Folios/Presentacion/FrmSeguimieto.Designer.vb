@@ -269,6 +269,7 @@ Partial Class FrmSeguimieto
         '
         'cboStatus
         '
+        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboStatus.FormattingEnabled = True
         Me.cboStatus.Items.AddRange(New Object() {"EN PROCESO", "FINALIZADO", "CANCELADO"})
@@ -410,7 +411,7 @@ Partial Class FrmSeguimieto
         Me.txtCredito.Location = New System.Drawing.Point(89, 136)
         Me.txtCredito.Multiline = True
         Me.txtCredito.Name = "txtCredito"
-        Me.txtCredito.Size = New System.Drawing.Size(170, 23)
+        Me.txtCredito.Size = New System.Drawing.Size(196, 23)
         Me.txtCredito.TabIndex = 254
         '
         'Label4
@@ -542,6 +543,7 @@ Partial Class FrmSeguimieto
         '
         Me.cboOperadores2.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboOperadores2.FormattingEnabled = True
+        Me.cboOperadores2.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas         ", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Chavez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
         Me.cboOperadores2.Location = New System.Drawing.Point(326, 169)
         Me.cboOperadores2.Name = "cboOperadores2"
         Me.cboOperadores2.Size = New System.Drawing.Size(158, 25)
@@ -571,6 +573,7 @@ Partial Class FrmSeguimieto
         '
         Me.cboCierra.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCierra.FormattingEnabled = True
+        Me.cboCierra.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas         ", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Chavez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
         Me.cboCierra.Location = New System.Drawing.Point(578, 170)
         Me.cboCierra.Name = "cboCierra"
         Me.cboCierra.Size = New System.Drawing.Size(123, 25)
@@ -630,6 +633,7 @@ Partial Class FrmSeguimieto
         '
         Me.cboOperadores.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboOperadores.FormattingEnabled = True
+        Me.cboOperadores.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Chavez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
         Me.cboOperadores.Location = New System.Drawing.Point(164, 169)
         Me.cboOperadores.Name = "cboOperadores"
         Me.cboOperadores.Size = New System.Drawing.Size(156, 25)
@@ -715,11 +719,11 @@ Partial Class FrmSeguimieto
         'txtEquipo
         '
         Me.txtEquipo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEquipo.Location = New System.Drawing.Point(59, 36)
+        Me.txtEquipo.Location = New System.Drawing.Point(59, 23)
         Me.txtEquipo.Multiline = True
         Me.txtEquipo.Name = "txtEquipo"
         Me.txtEquipo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtEquipo.Size = New System.Drawing.Size(642, 68)
+        Me.txtEquipo.Size = New System.Drawing.Size(642, 79)
         Me.txtEquipo.TabIndex = 164
         '
         'Label3
@@ -727,7 +731,7 @@ Partial Class FrmSeguimieto
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(6, 36)
+        Me.Label3.Location = New System.Drawing.Point(6, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 16)
         Me.Label3.TabIndex = 157
@@ -1064,9 +1068,9 @@ Partial Class FrmSeguimieto
         '
         Me.dtpFechaRecepcion.Enabled = False
         Me.dtpFechaRecepcion.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFechaRecepcion.Location = New System.Drawing.Point(171, 26)
+        Me.dtpFechaRecepcion.Location = New System.Drawing.Point(200, 24)
         Me.dtpFechaRecepcion.Name = "dtpFechaRecepcion"
-        Me.dtpFechaRecepcion.Size = New System.Drawing.Size(334, 24)
+        Me.dtpFechaRecepcion.Size = New System.Drawing.Size(312, 24)
         Me.dtpFechaRecepcion.TabIndex = 277
         '
         'txtObserRetencion

@@ -48,16 +48,16 @@ Public Class FrmSeguimieto
             txtEquipo.Text = equipo
             lector.Close()
 
-            MetodoMetasInf()
-            comando = conexionMetasInf.CreateCommand
-            comando.CommandText = "SELECT [cveOper],[Nombre] FROM [ListaOperadores] where Depto <> 'Almacén & Envíos' "
-            lector = comando.ExecuteReader
-            While lector.Read()
-                cboOperadores.Items.Add(lector(1))
-                cboOperadores2.Items.Add(lector(1))
-                cboCierra.Items.Add(lector(1))
-            End While
-            lector.Close()
+            'MetodoMetasInf()
+            'comando = conexionMetasInf.CreateCommand
+            'comando.CommandText = "SELECT [cveOper],[Nombre] FROM [ListaOperadores] where Depto <> 'Almacén & Envíos' "
+            'lector = comando.ExecuteReader
+            'While lector.Read()
+            '    cboOperadores.Items.Add(lector(1))
+            '    cboOperadores2.Items.Add(lector(1))
+            '    cboCierra.Items.Add(lector(1))
+            'End While
+            'lector.Close()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
         cadena = Err.Description
