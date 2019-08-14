@@ -35,6 +35,7 @@ Public Class FrmInicio
         Else
             Timer1.Stop()
             FrmSesion.Show()
+            LeerArchivo()
             Me.Dispose()
         End If
     End Sub
@@ -54,13 +55,14 @@ Public Class FrmInicio
                 MsgBox("Existe una nueva actualizacion", MsgBoxStyle.Exclamation, "METAS COTIZADOR")
                 Dim OpenFileDialog As New OpenFileDialog
                 Process.Start("\\10.10.10.7\Public-2\INSTALACIONES COTIZADOR\Seguimiento_Folios\Seguimiento Folios.msp")
+                FrmSesion.Close()
             End If
         Catch ex As Exception
             MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")
         End Try
     End Sub
 
-    Private Sub FrmInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LeerArchivo()
-    End Sub
+    'Private Sub FrmInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    'LeerArchivo()
+    'End Sub
 End Class
