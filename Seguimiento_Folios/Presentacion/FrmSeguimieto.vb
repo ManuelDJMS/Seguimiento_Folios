@@ -5,8 +5,8 @@ Public Class FrmSeguimieto
     Dim dias, OC As Integer
     Dim lector As SqlDataReader
     Private Sub FrmSeguimieto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Try
-        MetodoMetasInf()
+        Try
+            MetodoMetasInf()
             R = "select DISTINCT REL.[Folio], [Descripcion], INF.[Empresa], INF.[Usuario],CCU.Email,[Tel],isnull([Credito],'-'), [Fecha-recep],
              REL.[Mensajeria], isnull([TIPO],'-'),[DatosdelInforme], isnull([NumCot], '') as NumCot, [Status], [CveOperador], [Orden de compra],[Peso kg] FROM [Recepcion-Equipos-Logistica] REL  
             INNER JOIN [INFORMES-SERVICIOS] INF  ON REL.[Folio] = INF.[Folio]
@@ -14,7 +14,7 @@ Public Class FrmSeguimieto
             INNER JOIN [MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa] where INF.[Folio] = " & folio & ""
             Dim comando As New SqlCommand(R, conexionMetasInf)
 
-        lector = comando.ExecuteReader
+            lector = comando.ExecuteReader
             'MsgBox(R)
             lector.Read()
             'MsgBox(lector(1))
@@ -58,12 +58,12 @@ Public Class FrmSeguimieto
                 cboCierra.Items.Add(lector(1))
             End While
             lector.Close()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-        'cadena = Err.Description
-        'cadena = cadena.Replace("'", "")
-        'Bitacora("FrmSeguimiento", "Error al cargar el formulario", Err.Number, cadena)
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
+        cadena = Err.Description
+        cadena = cadena.Replace("'", "")
+        Bitacora("FrmSeguimiento", "Error al cargar el formulario", Err.Number, cadena)
+        End Try
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
