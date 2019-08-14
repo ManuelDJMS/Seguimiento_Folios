@@ -74,9 +74,8 @@ Public Class FrmAutorizarSolicitudes
         Try
             DGRes.Rows.Clear()
             MetodoMetasCotizador()
-            Dim R As String = "select x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, 
-            Con_cot, Num_cot, Mensajeria_recep, Obser_retencion, FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join 
-            [METASINF-2019-3].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio where x1.Folio like '" & txtFolio.Text & "%' and Cliente like '" & txtNombreE.Text & "%'
+            Dim R As String = "select distinct x1.Folio, Cliente, Cve_operador, Pendientes, Fac_Adelantado, CA, Combinado_con, Operador_ext, Cierre_folio, Credito, x1.Observaciones, Equipo, Dias, [Fecha-recep], FechaVenc, Con_cot, Num_cot, Mensajeria_recep, Mensajeria_retorno, Domicilio_entrega, Obser_retencion, obser_tecnicas,
+            FMC, FEF, datos_informes, OC, OC_necesaria, fac_oc, Num_orde_de_compra, Status_folio  from [MetasCotizador].[dbo].[Segumiento_folios] x1 inner join [METASINF-2019].[dbo].[Recepcion-Equipos-Logistica] x2 on x1.Folio=x2.Folio  where x1.Folio like '" & txtFolio.Text & "%' and Cliente like '" & txtNombreE.Text & "%'
             and Num_Cot like '" & txtNumCot.Text & "%' and Pendientes like '" & cbPendientes.Text & "%' and Num_orde_de_compra like'" & txtNumCompra.Text & "%' and Cve_operador= " & cveOperador
             Dim comando As New SqlCommand(R, conexionMetasCotizador)
             Dim lector As SqlDataReader
@@ -94,17 +93,17 @@ Public Class FrmAutorizarSolicitudes
     End Sub
 
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        'Try
-        Using conexion As New SqlConnection(cotizador)
-            conexion.Open()
-            Dim r As String
-            Dim transaction As SqlTransaction
-            transaction = conexion.BeginTransaction("Sample")
-            Dim comando As SqlCommand = conexion.CreateCommand()
-            comando.Connection = conexion
-            comando.Transaction = transaction
-            For i = 0 To DGRes.Rows.Count - 2
-                r = "update [MetasCotizador].[dbo].[Segumiento_folios] set Pendientes='" & (DGRes.Item(3, i).Value).Replace("'", "") & "',Fac_Adelantado='" & (DGRes.Item(4, i).Value).Replace("'", "") & "',
+        Try
+            Using conexion As New SqlConnection(cotizador)
+                conexion.Open()
+                Dim r As String
+                Dim transaction As SqlTransaction
+                transaction = conexion.BeginTransaction("Sample")
+                Dim comando As SqlCommand = conexion.CreateCommand()
+                comando.Connection = conexion
+                comando.Transaction = transaction
+                For i = 0 To DGRes.Rows.Count - 2
+                    r = "update [MetasCotizador].[dbo].[Segumiento_folios] set Pendientes='" & (DGRes.Item(3, i).Value).Replace("'", "") & "',Fac_Adelantado='" & (DGRes.Item(4, i).Value).Replace("'", "") & "',
                 CA='" & (DGRes.Item(5, i).Value) & "', Combinado_con='" & (DGRes.Item(6, i).Value) & "',Operador_ext='" & (DGRes.Item(7, i).Value) & "',
                 Cierre_folio='" & (DGRes.Item(8, i).Value) & "',Credito='" & DGRes.Item(9, i).Value & "',Observaciones='" & (DGRes.Item(10, i).Value) & "',
                 Equipo='" & (DGRes.Item(11, i).Value) & "',Dias=" & Val(DGRes.Item(12, i).Value) & ",FechaVenc='" & (DGRes.Item(13, i).Value) & "',
@@ -114,34 +113,34 @@ Public Class FrmAutorizarSolicitudes
                 datos_informes='" & (DGRes.Item(24, i).Value) & "',OC='" & (DGRes.Item(25, i).Value) & "',OC_necesaria='" & (DGRes.Item(26, i).Value) & "',
                 fac_oc='" & (DGRes.Item(27, i).Value) & "',Num_orde_de_compra='" & (DGRes.Item(28, i).Value) & "',
                 Status_folio='" & (DGRes.Item(29, i).Value) & "' where Folio='" & DGRes.Item(0, i).Value & "' and Cve_Operador= " & cveOperador
-                comando.CommandText = r
-                comando.ExecuteNonQuery()
+                    comando.CommandText = r
+                    comando.ExecuteNonQuery()
 
 
-            Next
+                Next
 
-            Try
-                If MessageBox.Show("¿Desea Guardar la información?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
-                    transaction.Commit()
-                    MsgBox("El Catálogo se guardó correctamente", MsgBoxStyle.Information, "Guardado Exitoso")
-                Else
-                    transaction.Rollback()
-                    Me.Dispose()
-                End If
-            Catch ex As Exception
-                MsgBox("Commit Exception type: {0} no se pudo insertar por error", MsgBoxStyle.Critical, "Error externo al Sistema")
                 Try
-                    transaction.Rollback()
-                Catch ex1 As Exception
-                    MsgBox("Error RollBack", MsgBoxStyle.Critical, "Error interno del Sistema")
+                    If MessageBox.Show("¿Desea Guardar la información?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+                        transaction.Commit()
+                        MsgBox("El Catálogo se guardó correctamente", MsgBoxStyle.Information, "Guardado Exitoso")
+                    Else
+                        transaction.Rollback()
+                        Me.Dispose()
+                    End If
+                Catch ex As Exception
+                    MsgBox("Commit Exception type: {0} no se pudo insertar por error", MsgBoxStyle.Critical, "Error externo al Sistema")
+                    Try
+                        transaction.Rollback()
+                    Catch ex1 As Exception
+                        MsgBox("Error RollBack", MsgBoxStyle.Critical, "Error interno del Sistema")
+                    End Try
                 End Try
-            End Try
-            conexion.Close()
-        End Using
+                conexion.Close()
+            End Using
 
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
-        'End Try
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error del Sistema")
+        End Try
     End Sub
 
     Private Sub TxtNumCompra_TextChanged(sender As Object, e As EventArgs) Handles txtNumCompra.TextChanged
