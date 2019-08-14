@@ -53,7 +53,7 @@ Public Class FrmInicio
             If Not variable = lbVersion.Text Then 'Verifica si la version es igual a la del txt
                 MsgBox("Existe una nueva actualizacion", MsgBoxStyle.Exclamation, "METAS COTIZADOR")
                 Dim OpenFileDialog As New OpenFileDialog
-                Process.Start("\\10.10.10.7\Public-2\INSTALACIONES COTIZADOR\Metas Cotizador\MetasCotizador.msp")
+                Process.Start("\\10.10.10.7\Public-2\INSTALACIONES COTIZADOR\Seguimiento_Folios\Seguimiento Folios.msp")
             End If
         Catch ex As Exception
             MsgBox("Se presento un problema al leer el archivo: " & ex.Message, MsgBoxStyle.Critical, ":::Aprendamos de Programación:::")

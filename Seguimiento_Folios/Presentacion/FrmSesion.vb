@@ -30,7 +30,7 @@ Public Class FrmSesion
     End Sub
 
     Private Sub Btncerrar_Click(sender As Object, e As EventArgs) Handles btncerrar.Click
-        Me.Dispose()
+        Application.Exit()
     End Sub
 
     Private Sub Btnmin_Click(sender As Object, e As EventArgs) Handles btnmin.Click
