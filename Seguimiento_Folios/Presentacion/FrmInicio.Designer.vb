@@ -73,7 +73,7 @@ Partial Class FrmInicio
         Me.lbVersion.Name = "lbVersion"
         Me.lbVersion.Size = New System.Drawing.Size(58, 21)
         Me.lbVersion.TabIndex = 12
-        Me.lbVersion.Text = "1.0.0.4"
+        Me.lbVersion.Text = "1.0.0.5"
         '
         'FrmInicio
         '
