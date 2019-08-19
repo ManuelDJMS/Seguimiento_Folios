@@ -43,6 +43,7 @@ Public Class FrmSeguimieto
                 rbSIOC.Checked = True
                 rbNOOC.Checked = False
             End If
+            equipo = lector(9)
             While lector.Read()
                 equipo = equipo + ", " + lector(9)
             End While
