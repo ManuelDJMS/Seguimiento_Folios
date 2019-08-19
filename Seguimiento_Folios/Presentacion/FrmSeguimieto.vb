@@ -5,14 +5,15 @@ Public Class FrmSeguimieto
     Dim dias, OC As Integer
     Dim lector As SqlDataReader
     Private Sub FrmSeguimieto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Try
-        MetodoMetasInf()
-        R = "select DISTINCT REL.[Folio], isnull([Descripcion],'-'), INF.[Empresa],[Usuario],isnull(CCU.Email,'-'),isnull([Tel],'-'),isnull([Credito],'-'), [Fecha-recep],
-             REL.[Mensajeria], isnull([TIPO],'-'),isnull([DatosdelInforme],'-'), isnull([NumCot], '') as NumCot, isnull([Status],'-'), [CveOperador], [Orden de compra],isnull([Peso kg],'-') FROM [Recepcion-Equipos-Logistica] REL  
+        Try
+            MetodoMetasInf()
+            R = "select DISTINCT REL.[Folio], isnull([Descripcion],'-'), INF.[Empresa],[Usuario],isnull(CCU.Email,'-'),isnull([Tel],'-'),isnull([Credito],'-'), [Fecha-recep],
+             REL.[Mensajeria], isnull([TIPO],'-'),isnull([DatosdelInforme],'-'), isnull([NumCot], '') as NumCot, isnull([Status],'-'), [CveOperador], [Orden de compra],isnull([Peso kg],'-') 
+			 FROM [Recepcion-Equipos-Logistica] REL  
             INNER JOIN [INFORMES-SERVICIOS] INF  ON REL.[Folio] = INF.[Folio]
-            INNER JOIN [Contactos-Clientes-Usuarios] CCU on INF.[ClavecontactoConsign] = CCU.[Clavempresa]
-            INNER JOIN [MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa] where INF.[Folio] = " & folio & ""
-        Dim comando As New SqlCommand(R, conexionMetasInf)
+            INNER JOIN [InformacionGeneral].[dbo].[Contactos-Clientes-Usuarios] CCU on INF.[ClavecontactoConsign] = CCU.[Clavempresa]
+            INNER JOIN [InformacionGeneral].[dbo].[MetAsInf] ON [MetAsInf].[Clavempresa] = CCU.[Clavempresa] where INF.[Folio] = " & folio & ""
+            Dim comando As New SqlCommand(R, conexionMetasInf)
 
             lector = comando.ExecuteReader
             'MsgBox(R)
@@ -48,22 +49,22 @@ Public Class FrmSeguimieto
             txtEquipo.Text = equipo
             lector.Close()
 
-        'MetodoMetasInf()
-        'comando = conexionMetasInf.CreateCommand
-        'comando.CommandText = "SELECT [cveOper],[Nombre] FROM [ListaOperadores] where Depto <> 'Almacén & Envíos' "
-        'lector = comando.ExecuteReader
-        'While lector.Read()
-        '    cboOperadores.Items.Add(lector(1))
-        '    cboOperadores2.Items.Add(lector(1))
-        '    cboCierra.Items.Add(lector(1))
-        'End While
-        'lector.Close()
-        'Catch ex As Exception
-        '    MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
-        'cadena = Err.Description
-        'cadena = cadena.Replace("'", "")
-        'Bitacora("FrmSeguimiento", "Error al cargar el formulario", Err.Number, cadena)
-        'End Try
+            'MetodoMetasInf()
+            'comando = conexionMetasInf.CreateCommand
+            'comando.CommandText = "SELECT [cveOper],[Nombre] FROM [ListaOperadores] where Depto <> 'Almacén & Envíos' "
+            'lector = comando.ExecuteReader
+            'While lector.Read()
+            '    cboOperadores.Items.Add(lector(1))
+            '    cboOperadores2.Items.Add(lector(1))
+            '    cboCierra.Items.Add(lector(1))
+            'End While
+            'lector.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
+            cadena = Err.Description
+            cadena = cadena.Replace("'", "")
+            Bitacora("FrmSeguimiento", "Error al cargar el formulario", Err.Number, cadena)
+        End Try
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
