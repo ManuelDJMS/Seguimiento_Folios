@@ -106,7 +106,7 @@ Public Class FrmAutorizarSolicitudes
                     r = "update [MetasCotizador].[dbo].[Segumiento_folios] set Pendientes='" & (DGRes.Item(3, i).Value).Replace("'", "") & "',Fac_Adelantado='" & (DGRes.Item(4, i).Value).Replace("'", "") & "',
                 CA='" & (DGRes.Item(5, i).Value) & "', Combinado_con='" & (DGRes.Item(6, i).Value) & "',Operador_ext='" & (DGRes.Item(7, i).Value) & "',
                 Cierre_folio='" & (DGRes.Item(8, i).Value) & "',Credito='" & DGRes.Item(9, i).Value & "',Observaciones='" & (DGRes.Item(10, i).Value) & "',
-                Equipo='" & (DGRes.Item(11, i).Value) & "',Dias=" & Val(DGRes.Item(12, i).Value) & ",FechaVenc='" & (DGRes.Item(13, i).Value) & "',
+                Equipo='" & (DGRes.Item(11, i).Value) & "',Dias=" & Val(DGRes.Item(12, i).Value) & ",FechaVenc='" & (DGRes.Item(14, i).Value) & "',
                 Con_cot='" & (DGRes.Item(15, i).Value) & "',Num_cot=" & Val(DGRes.Item(16, i).Value) & ",Mensajeria_recep='" & (DGRes.Item(17, i).Value) & "',
                 Mensajeria_retorno='" & (DGRes.Item(18, i).Value) & "', Domicilio_entrega='" & (DGRes.Item(19, i).Value) & "',
                 Obser_retencion='" & (DGRes.Item(20, i).Value) & "', obser_tecnicas='" & (DGRes.Item(21, i).Value) & "',FMC='" & (DGRes.Item(22, i).Value) & "',FEF='" & (DGRes.Item(23, i).Value) & "',
