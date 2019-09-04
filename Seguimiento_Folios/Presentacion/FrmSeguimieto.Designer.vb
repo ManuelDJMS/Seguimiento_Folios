@@ -543,7 +543,7 @@ Partial Class FrmSeguimieto
         '
         Me.cboOperadores2.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboOperadores2.FormattingEnabled = True
-        Me.cboOperadores2.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas         ", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Chavez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
+        Me.cboOperadores2.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas         ", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Martínez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
         Me.cboOperadores2.Location = New System.Drawing.Point(326, 169)
         Me.cboOperadores2.Name = "cboOperadores2"
         Me.cboOperadores2.Size = New System.Drawing.Size(158, 25)
@@ -573,7 +573,7 @@ Partial Class FrmSeguimieto
         '
         Me.cboCierra.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCierra.FormattingEnabled = True
-        Me.cboCierra.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas         ", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Chavez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
+        Me.cboCierra.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas         ", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Martínez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
         Me.cboCierra.Location = New System.Drawing.Point(578, 170)
         Me.cboCierra.Name = "cboCierra"
         Me.cboCierra.Size = New System.Drawing.Size(123, 25)
@@ -633,7 +633,7 @@ Partial Class FrmSeguimieto
         '
         Me.cboOperadores.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboOperadores.FormattingEnabled = True
-        Me.cboOperadores.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Chavez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
+        Me.cboOperadores.Items.AddRange(New Object() {"Natalia García Chavez", "Cynthia Marlene Peña Baltazar", "Ximena Isabel Mena Vargas", "Pedro Hazael Palacios López", "Mayra Elizabeth Ramírez Galindo", "Janette Martínez de la Cruz", "Ma. de Jesus Guzmán Chavez", "Maria Guadalupe Lopez Naranjo ", "María Guadalupe Zúñiga"})
         Me.cboOperadores.Location = New System.Drawing.Point(164, 169)
         Me.cboOperadores.Name = "cboOperadores"
         Me.cboOperadores.Size = New System.Drawing.Size(156, 25)
