@@ -56,6 +56,7 @@ Partial Class FrmSeguimieto
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtTelefono = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextOperador = New System.Windows.Forms.TextBox()
         Me.cboOperadores2 = New System.Windows.Forms.ComboBox()
         Me.txtPeso = New System.Windows.Forms.TextBox()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -110,6 +111,8 @@ Partial Class FrmSeguimieto
         Me.txtMenEnv = New System.Windows.Forms.TextBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.btGuardar = New System.Windows.Forms.Button()
+        Me.txtFMC = New System.Windows.Forms.MaskedTextBox()
+        Me.textFEF = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox2.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -269,7 +272,6 @@ Partial Class FrmSeguimieto
         '
         'cboStatus
         '
-        Me.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboStatus.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboStatus.FormattingEnabled = True
         Me.cboStatus.Items.AddRange(New Object() {"EN PROCESO", "FINALIZADO", "CANCELADO"})
@@ -506,6 +508,8 @@ Partial Class FrmSeguimieto
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtFMC)
+        Me.GroupBox1.Controls.Add(Me.TextOperador)
         Me.GroupBox1.Controls.Add(Me.cboOperadores2)
         Me.GroupBox1.Controls.Add(Me.txtPeso)
         Me.GroupBox1.Controls.Add(Me.Label31)
@@ -539,6 +543,14 @@ Partial Class FrmSeguimieto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información del equipo y Certificado"
         '
+        'TextOperador
+        '
+        Me.TextOperador.Location = New System.Drawing.Point(164, 168)
+        Me.TextOperador.Name = "TextOperador"
+        Me.TextOperador.Size = New System.Drawing.Size(320, 27)
+        Me.TextOperador.TabIndex = 276
+        Me.TextOperador.Visible = False
+        '
         'cboOperadores2
         '
         Me.cboOperadores2.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -551,6 +563,7 @@ Partial Class FrmSeguimieto
         '
         'txtPeso
         '
+        Me.txtPeso.Enabled = False
         Me.txtPeso.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPeso.Location = New System.Drawing.Point(535, 110)
         Me.txtPeso.Multiline = True
@@ -802,6 +815,7 @@ Partial Class FrmSeguimieto
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.textFEF)
         Me.GroupBox4.Controls.Add(Me.Panel4)
         Me.GroupBox4.Controls.Add(Me.Panel3)
         Me.GroupBox4.Controls.Add(Me.rbNOOCFAC)
@@ -994,6 +1008,7 @@ Partial Class FrmSeguimieto
         '
         'txtMenRecep
         '
+        Me.txtMenRecep.Enabled = False
         Me.txtMenRecep.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMenRecep.Location = New System.Drawing.Point(200, 56)
         Me.txtMenRecep.Multiline = True
@@ -1140,6 +1155,24 @@ Partial Class FrmSeguimieto
         Me.btGuardar.Text = "Guardar "
         Me.btGuardar.UseVisualStyleBackColor = False
         '
+        'txtFMC
+        '
+        Me.txtFMC.Location = New System.Drawing.Point(326, 243)
+        Me.txtFMC.Mask = "0000-00-00"
+        Me.txtFMC.Name = "txtFMC"
+        Me.txtFMC.Size = New System.Drawing.Size(203, 27)
+        Me.txtFMC.TabIndex = 277
+        Me.txtFMC.Visible = False
+        '
+        'textFEF
+        '
+        Me.textFEF.Location = New System.Drawing.Point(229, 96)
+        Me.textFEF.Mask = "0000-00-00"
+        Me.textFEF.Name = "textFEF"
+        Me.textFEF.Size = New System.Drawing.Size(203, 27)
+        Me.textFEF.TabIndex = 278
+        Me.textFEF.Visible = False
+        '
         'FrmSeguimieto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1270,4 +1303,7 @@ Partial Class FrmSeguimieto
     Friend WithEvents txtPeso As TextBox
     Friend WithEvents Label31 As Label
     Friend WithEvents cboOperadores2 As ComboBox
+    Friend WithEvents TextOperador As TextBox
+    Friend WithEvents txtFMC As MaskedTextBox
+    Friend WithEvents textFEF As MaskedTextBox
 End Class
