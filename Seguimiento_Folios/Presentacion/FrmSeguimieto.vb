@@ -63,6 +63,7 @@ Public Class FrmSeguimieto
                 'lector = comandoMetasInf.ExecuteReader
                 'MsgBox(R)
                 lector.Read()
+                lblNumFolio.Text = lector(1)
                 txtCredito.Text = lector(2)
                 If lector(3) = "SI" Then
                     RbSi.Checked = True
@@ -113,19 +114,19 @@ Public Class FrmSeguimieto
                 End If
                 'dtpfechaCertificado.Value = lector(19)
                 If lector(20) = "SI" Then
-                        rbSIOC.Checked = True
-                        rbNOOC.Checked = False
-                    End If
-                    txtNumComp.Text = lector(21)
-                    If lector(22) = "SI" Then
-                        rbSIOCN.Checked = True
-                        rbNOOCN.Checked = False
-                    End If
-                    If lector(23) = "SI" Then
-                        rbSIOCFAC.Checked = True
-                        rbNOOCFAC.Checked = False
-                    End If
-                    Label17.Visible = True
+                    rbSIOC.Checked = True
+                    rbNOOC.Checked = False
+                End If
+                txtNumComp.Text = lector(21)
+                If lector(22) = "SI" Then
+                    rbSIOCN.Checked = True
+                    rbNOOCN.Checked = False
+                End If
+                If lector(23) = "SI" Then
+                    rbSIOCFAC.Checked = True
+                    rbNOOCFAC.Checked = False
+                End If
+                Label17.Visible = True
                 'dtpFechaFacturación.Visible = True
                 If lector(24) = "0000-00-00" Then
                     dtpFechaFacturación.Visible = False
@@ -137,16 +138,16 @@ Public Class FrmSeguimieto
                 End If
                 'dtpFechaFacturación.Value = lector(24)
                 dtpFechaRecepcion.Value = lector(25)
-                    txtMenRecep.Text = lector(26)
-                    txtMenEnv.Text = lector(27)
-                    txtObserRetencion.Text = lector(28)
-                    txtDomEntrega.Text = lector(29)
-                    txtNombreCompania.Text = lector(30)
-                    txtNombreCliente.Text = lector(31)
-                    txtTelefono.Text = lector(32)
-                    lector.Close()
+                txtMenRecep.Text = lector(26)
+                txtMenEnv.Text = lector(27)
+                txtObserRetencion.Text = lector(28)
+                txtDomEntrega.Text = lector(29)
+                txtNombreCompania.Text = lector(30)
+                txtNombreCliente.Text = lector(31)
+                txtTelefono.Text = lector(32)
+                lector.Close()
 
-                End If
+            End If
 
 
 
@@ -169,6 +170,7 @@ Public Class FrmSeguimieto
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        idseguimiento = 0
         Me.Close()
     End Sub
     Private Sub txtDias_TextChanged(sender As Object, e As EventArgs) Handles txtDias.TextChanged
@@ -258,6 +260,7 @@ Public Class FrmSeguimieto
                     "', '" & txtCredito.Text & "', '" & txtObserPendientes.Text & "','" & txtEquipo.Text & "'," & Val(txtDias.Text) & ", '" & fechaVen & "', '" & CONC & "',  " & Val(txtNumCot.Text) & ", '" &
                     txtMenRecep.Text & "','" & txtObserRetencion.Text & "','0000-00-00','0000-00-00', '" & txtDatosInforme.Text & "','" & UOC & "','" & OCN & "','" & FACOC & "','" & txtNumComp.Text & "', '" &
                     cboStatus.Text & "', '" & txtDomEntrega.Text & "','" & txtMenEnv.Text & "', '" & txtObserTec.Text & "')"
+
             Else
                 Dim fechacertificado As String
                 Dim fechafacturacion As String
@@ -284,13 +287,14 @@ Public Class FrmSeguimieto
                 datos_informes='" & txtDatosInforme.Text & "',OC='" & UOC & "',OC_necesaria='" & OCN & "',
                 fac_oc='" & FACOC & "',Num_orde_de_compra='" & txtNumComp.Text & "',
                 Status_folio='" & cboStatus.Text & "' where idSeguimiento=" & idseguimiento & " and Cve_Operador= " & cveOperador
+
             End If
             Dim comando2 As New SqlCommand(R, conexionMetasCotizador)
             comando2.CommandText = R
             comando2.ExecuteNonQuery()
             MsgBox("FOLIO NUM: " & folio & ".  ACTUALIZADO")
             idseguimiento = 0
-            FrmAutorizarSolicitudes.Dispose()
+            FrmAutorizarSolicitudes.Close()
             Me.Close()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Error en el Sistema")
