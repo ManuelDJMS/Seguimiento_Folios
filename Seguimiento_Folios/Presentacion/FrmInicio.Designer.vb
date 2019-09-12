@@ -71,9 +71,9 @@ Partial Class FrmInicio
         Me.lbVersion.ForeColor = System.Drawing.Color.SteelBlue
         Me.lbVersion.Location = New System.Drawing.Point(693, 340)
         Me.lbVersion.Name = "lbVersion"
-        Me.lbVersion.Size = New System.Drawing.Size(58, 21)
+        Me.lbVersion.Size = New System.Drawing.Size(67, 21)
         Me.lbVersion.TabIndex = 12
-        Me.lbVersion.Text = "1.0.0.9"
+        Me.lbVersion.Text = "1.0.0.10"
         '
         'FrmInicio
         '
